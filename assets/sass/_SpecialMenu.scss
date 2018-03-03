@@ -1,0 +1,111 @@
+#SpecialMenu {
+  background: #F0F0F0;
+  padding: 5% 0;
+  text-align: center;
+  margin: auto;
+  position: relative;
+
+  .container {
+    position: relative;
+    h6 {
+      letter-spacing: .5rem;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      padding-bottom: 3%;
+      color: #B6B7B8;
+      font-family: $textFont;
+      font-weight: 700;
+    }
+
+    h3 {
+      font-size: 2rem;
+      text-transform: capitalize;
+      padding-bottom: 5%;
+      color: #141414;
+      font-family: $restaurantTitleFont;
+      font-weight: 700;
+    }
+
+    .specialContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding-bottom: 7%;
+      width: 90%;
+      margin: 0 auto;
+      .special {
+        flex-basis: 30%;
+        padding: 2%;
+        background: #fff;
+        // margin: 5px;
+        &.one {
+          // flex-basis: 25%;
+        }
+        &.two {
+          // flex-basis: 25%;
+        }
+        &.three {
+          // flex-basis: 25%;
+        }
+
+        .specialTop {
+          background-image: url("https://img1.10bestmedia.com/Images/Photos/133605/Steakhouses_54_990x660_201404221523.jpg");
+          max-width: 100%;
+          max-height: 100%;
+          width: 100%;
+          height: 50%;
+          padding-bottom: 60%;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          margin-bottom: 5rem;
+
+          .specialPrice {
+            // position:absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #FEFFFF;
+            color: black;
+            border-radius: 50%;
+            box-shadow: 0px 0px 0px 8px rgba(255,255,255,0.7);
+            font-family: $storyFont;
+            font-weight: 400;
+            font-size: 1.9rem;
+            height: 100px;
+            width: 100px;
+            left: 50%;
+            margin: 0 auto;
+            transform: translate(0%, 150%);
+          }
+        }
+
+        .specialDescription {
+
+          .dish {
+            font-weight: 700;
+            padding: 5%;
+            font-size: .8rem;
+          }
+          .ingredients {
+            color: #A4A5A6;
+            font-size: .7rem;
+            word-spacing: normal;
+          }
+        }
+      }
+    }
+    .menuLink {
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline;
+      a{
+        color: #141414;
+        font-family: serif;
+        letter-spacing: 1px;
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+}

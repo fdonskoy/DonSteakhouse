@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,700|Open+Sans:800,100,300,500,700');
+@import url('https://fonts.googleapis.com/css?family=Rozha+One:100,300,500,700');
+@import "variables";
+@import "reset";
+@import "grid";
+@import "TopImg";
+@import "Header";
+@import "OurStory";
+@import "SpecialMenu";
+@import "Quote";
+@import "Reviews";
+@import "PromotionsAndEvents";
+@import "Contact";
+@import "Footer";
+
+@font-face {
+  font-family: road_rage;
+  src: url('/fonts/Road_Rage.otf');
+}
+
+html {
+  width: 100%;
+  height: 100%;
+
+  body {
+    font-family: $textFont;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background: #fff;
+
+    #app {
+      width: 100%;
+      height: 100%;
+
+      .app {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

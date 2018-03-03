@@ -1,0 +1,38 @@
+#Quote {
+  background: #FEFFFF;
+  height: 50%;
+
+  background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),
+  url("https://images.pexels.com/photos/326281/pexels-photo-326281.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb");
+  background-position: center;
+  background-size: cover;
+  .container {
+    // padding: 10% 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    .quoteContainer {
+      margin-left: 50%;
+      margin-bottom: 5%;
+      .quoteContent {
+        margin: 0 auto;
+        font-family: $storyFont;
+        color: #FEFFFF;
+        text-transform: capitalize;
+        font-size: 2rem;
+        width: 80%;
+        line-height: 3rem;
+        padding: 10% 0;
+        .quote {
+          font-size: 4rem;
+        }
+      }
+      .quoteAuthor {
+        color: #FEFFFF;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

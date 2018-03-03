@@ -1,0 +1,48 @@
+#Footer {
+  background: #141414;
+  padding: 5% 0;
+  text-align: center;
+  margin: auto;
+  position: relative;
+  height: 50%;
+
+  .container {
+    position: relative;
+    color: #FEFFFF;
+    .logo {
+      width: 10%;
+      height: 4rem;
+      margin: 0 auto;
+      background-image: url("https://cdn.pixabay.com/photo/2016/05/26/18/27/goose-1417935_1280.png");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .links {
+      padding: 3% 0 10% 0;
+      li {
+        list-style-type: none;
+        display: inline-block;
+        padding: 0 3%;
+        border-right: 1px solid gray;
+        font-size: .5rem;
+        color: #F4F4F4;
+      }
+    }
+    .social {
+      padding-bottom: 3%;
+
+      .media {
+        display: inline-block;
+        padding: 0 2%;
+      }
+    }
+    .copyright {
+      color: #B6B7B8;
+      font-size: .5rem;
+      line-height: 1.1rem;
+    }
+
+  }
+
+}

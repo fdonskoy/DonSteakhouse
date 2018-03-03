@@ -1,0 +1,58 @@
+#TopImg {
+  background:black;
+  height: 100%;
+  position: relative;
+  // background-image: linear-gradient(135deg,
+  // rgba(0,0,0,0.4) 0, #000, 100%),
+  // url("http://www.seriouseats.com/recipes/images/2015/12/20151202-prime-rib-red-wine-jus-step-by-step-kenji-28-1500x1125.jpg");
+
+  background-image: linear-gradient(270deg, rgba(0,0,0,.05) 0, #000),
+  url("http://www.seriouseats.com/recipes/images/2015/12/20151202-prime-rib-red-wine-jus-step-by-step-kenji-28-1500x1125.jpg");
+  background-position: center;
+  background-size: cover;
+
+  .title {
+    padding: 200px 0;
+    text-align: left;
+    position:absolute;
+    h5 {
+      text-transform: uppercase;
+      color: lightgray;
+      font-weight: 300;
+      letter-spacing: 1rem;
+      margin-bottom: 2%;
+    }
+    h1 {
+      text-transform: uppercase;
+      width: 50%;
+      color: #F4F4F4;
+      font-weight: 300;
+      font-size: 4rem;
+      font-family: $restaurantTitleFont;
+    }
+  }
+
+  .contact-info {
+    bottom: 0;
+    text-align: left;
+    color: white;
+    font-size: 0.8rem;
+    line-height: 1.9rem;
+    color: lightgray;
+    position: absolute;
+
+    strong {
+      font-weight: 700;
+      color: white;
+    }
+    h2 {
+      font-size: 2rem;
+      color: white;
+    }
+
+    .hours {
+      padding: 2% 0;
+    }
+  }
+
+}
