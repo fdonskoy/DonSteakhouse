@@ -19,7 +19,7 @@ export const PromotionsAndEvents = ({state}, {actions}) => {
             </div>
             <div className="eventDetails">
               <div className="eventAddress">
-                28-15 raphael st, fair lawn, nj
+                49-49 Tortellini Ave, Pastafari, Italy
               </div>
               <div className="eventTime">
                 10:00 AM - 11:00 AM
