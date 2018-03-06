@@ -1,0 +1,110 @@
+#Contact {
+  background: #F0F0F0;
+  padding: 5% 0;
+  text-align: center;
+  margin: auto;
+  position: relative;
+  height: 100%;
+
+  iframe {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    height: 50%;
+  }
+
+
+  .container {
+    position: relative;
+    h6 {
+      letter-spacing: .5rem;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      padding-bottom: 3%;
+      color: #B6B7B8;
+      font-family: $textFont;
+      font-weight: 700;
+    }
+
+    h3 {
+      font-size: 2rem;
+      text-transform: capitalize;
+      padding-bottom: 5%;
+      color: #141414;
+      font-family: $restaurantTitleFont;
+      font-weight: 700;
+    }
+
+    .contactBox {
+      overflow: hidden;
+      background: #FEFFFF;
+      padding: 5%;
+      width: 70%;
+      margin: 0 auto;
+      .left{
+        display: inline-block;
+        float: left;
+        text-align: left;
+        width: 50%;
+        .city {
+          font-size: 1.3rem;
+          font-family: $restaurantTitleFont;
+          color: lightgray;
+          font-weight: 700;
+          strong {
+            color: #141414;
+          }
+        }
+        .address {
+          color: #B6B7B8;
+          font-family: $textFont;
+          font-size: 0.8rem;
+          line-height: 1.2rem;
+          font-weight: 700;
+          padding: 5% 0;
+        }
+        .email {
+          color: #141414;
+          font-family: $textFont;
+          font-size: 0.7rem;
+          line-height: 1.2rem;
+          strong {
+            font-weight: 700;
+          }
+        }
+      }
+      .right {
+        display: inline-block;
+        float: right;
+        text-align: left;
+        width: 50%;
+        color: #B6B7B8;
+        font-family: $textFont;
+        font-size: 0.6rem;
+        line-height: 1.2rem;
+        font-weight: 700;
+
+        .phoneNumber {
+          font-size: 1.7rem;
+          font-family: $restaurantTitleFont;
+          font-weight: 300;
+          color: #141414;
+          padding-top: 3%;
+        }
+        .serviceInfo {
+          font-weight: 500;
+          padding: 5% 0 2% 0;
+          line-height: 1.5rem;
+          width: 50%;
+          strong {
+            font-weight: 700;
+            color: #141414;
+          }
+        }
+      }
+    }
+
+  }
+
+}

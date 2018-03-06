@@ -1,0 +1,67 @@
+#OurStory {
+  background: #FEFFFF;
+  height: 100%;
+  .container {
+    padding: 10% 0;
+    .row {
+      .first {
+        h6 {
+          text-transform: uppercase;
+          color: #CDCECF;
+          font-weight: 300;
+          letter-spacing: 1rem;
+          margin-bottom: 5%;
+        }
+        h2 {
+          text-transform: capitalize;
+          // width: 50%;
+          font-weight: 300;
+          font-size: 2.5rem;
+          font-family: $storyFont;
+          color: #2E2F30;
+        }
+        p {
+          word-spacing: 1px;
+          padding: 10% 0;
+          line-height: 1.5rem;
+          color: #BCBDBE;
+        }
+        .quote {
+          padding-bottom: 20%;
+          color: #060606;
+
+          span {
+            font-size: .9rem;
+            font-weight: 100;
+            color: gray;
+          }
+
+          strong {
+            color: #BCBDBE;
+            font-weight: 700;
+            font-style: italic;
+          }
+        }
+        .reserve-btn {
+          padding: 3%;
+          border: 1px solid black;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-size: 1.5rem;
+          color: black;
+          font-family: $restaurantTitleFont;
+        }
+      }
+      .second {
+        text-align: center;
+        img {
+          background-repeat: no-repeat;
+          // padding: 50%;
+          // position: absolute;
+          width: 75%;
+          padding: 10%;
+        }
+      }
+    }
+  }
+}

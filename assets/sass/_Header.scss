@@ -1,0 +1,121 @@
+header {
+	position: absolute;
+	color: white;
+	width: 100%;
+	padding: 20px;
+	z-index: 5;
+
+	.logo {
+		display: inline-block;
+		background-image: url('https://cdn.pixabay.com/photo/2016/05/26/18/27/goose-1417935_1280.png');
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+		height: 1.4rem;
+		width: 10%;
+	}
+
+	.hamburger {
+		display: none;
+
+		div {
+			width: 35px;
+			height: 5px;
+			background-color: #f4f4f4;
+			margin: 6px 0;
+		}
+	}
+	nav {
+		display: inline-block;
+		float: right;
+		text-align: right;
+
+		a {
+			color: white;
+			text-decoration: none;
+			padding: 1rem 2rem;
+			display: inline-block;
+			font-weight: 700;
+			transition: ease-in-out 0.2s;
+			text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+			&:hover {
+				color: #af111c;
+			}
+		}
+		.close {
+			display: none;
+			transition: ease-in-out 0.3s;
+		}
+	}
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+  */
+
+// @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+// 	//CSS
+// }
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 906px) {
+	//CSS
+	header {
+		height: 100%;
+		.logo {
+			display: inline-block;
+		}
+		.hamburger {
+			display: inline-block;
+			float: right;
+			cursor: pointer;
+			padding: 1px;
+
+			div {
+				transition: ease-in-out 0.5s;
+			}
+
+			&:hover {
+				div {
+					background-color: #af111c;
+				}
+			}
+		}
+
+		nav {
+			transition: ease-in-out 0.5s;
+			background: black;
+			position: absolute;
+			right: -100%;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			a {
+				display: block;
+				width: 50%;
+				margin: 0 auto;
+				padding: 10% 0;
+			}
+
+			.close {
+				display: block;
+				top: 2%;
+				right: 5%;
+				position: absolute;
+				font-size: 2rem;
+
+				&:hover {
+					color: #af111c;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}

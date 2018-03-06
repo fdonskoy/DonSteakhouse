@@ -1,0 +1,90 @@
+#PromotionsAndEvents {
+  background: #F0F0F0;
+  padding: 5% 0;
+  text-align: center;
+  margin: auto;
+  position: relative;
+  height: 100%;
+  margin-top: 10%;
+
+  .container {
+    position: relative;
+    h6 {
+      letter-spacing: .5rem;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      padding-bottom: 3%;
+      color: #B6B7B8;
+      font-family: $textFont;
+      font-weight: 700;
+    }
+
+    h3 {
+      font-size: 2rem;
+      text-transform: capitalize;
+      padding-bottom: 5%;
+      color: #141414;
+      font-family: $restaurantTitleFont;
+      font-weight: 700;
+    }
+
+    .specialContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-bottom: 7%;
+      width: 60%;
+      margin: 0 auto;
+      .box {
+        flex:none;
+        width: 50%;
+        // border: 1px solid black;
+        padding: 10%;
+
+        &.event {
+          background: #FEFFFF;
+          .eventTitle {
+            color: #141414;
+            font-family: $restaurantTitleFont;
+            font-weight: 700;
+            text-transform: capitalize;
+            line-height: 1.4rem;
+          }
+          .divider {
+            padding: 10% 0;
+            color: #B6B7B8;
+            opacity: 0.5;
+          }
+          .eventDetails {
+            color: #B6B7B8;
+            font-family: $textFont;
+            font-size: 0.6rem;
+            line-height: 1.2rem;
+            .eventAddress {
+              text-transform: capitalize;
+            }
+            .eventTime {
+
+            }
+            .eventDate {
+
+            }
+          }
+        }
+        &.image1 {
+          background-image: url("http://therodinhoods.com/wp-content/uploads/2016/10/5168-Hackathon-1.jpg?width=750");
+          background-position: center;
+          background-size: cover;
+        }
+        &.image2 {
+          background-image: url("https://cdn.pixabay.com/photo/2017/04/30/09/30/steak-2272467_1280.jpg");
+          background-position: center;
+          background-size: cover;
+        }
+
+      }
+    }
+
+  }
+
+}
