@@ -495,7 +495,7 @@ var PromotionsAndEvents = exports.PromotionsAndEvents = function PromotionsAndEv
             (0, _hyperapp.h)(
               "div",
               { className: "eventAddress" },
-              "28-15 raphael st, fair lawn, nj"
+              "49-49 Tortellini Ave, Pastafari, Italy"
             ),
             (0, _hyperapp.h)(
               "div",
