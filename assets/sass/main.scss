@@ -18,6 +18,10 @@
   src: url('/fonts/Road_Rage.otf');
 }
 
+* {
+  max-width: 100%;
+}
+
 html {
   width: 100%;
   height: 100%;

@@ -87,4 +87,14 @@
 
   }
 
+  @media (max-width: 767px) {
+    // margin-top: 50%;
+    padding: 20% 0;
+    .container {
+      .specialContainer {
+        width: 100%;
+
+      }
+    }
+  }
 }

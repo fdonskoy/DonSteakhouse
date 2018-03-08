@@ -4,8 +4,10 @@ export const SpecialMenu = ({state}, {actions}) => {
   return (
     <section id="SpecialMenu">
       <div className="container">
-        <h6>special menu</h6>
-        <h3>Delicious flavours of autumn</h3>
+        <div className="hContainer">
+          <h6>special menu</h6>
+          <h3>Delicious flavours of autumn</h3>
+        </div>
         <div className="specialContainer">
           <div className="one special">
             <div className="specialTop">

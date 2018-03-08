@@ -303,7 +303,7 @@ var Footer = exports.Footer = function Footer(_ref, _ref2) {
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 exports.Header = undefined;
 
@@ -316,49 +316,60 @@ var _hyperapp = __webpack_require__(0);
 //   )
 // }
 
-//this does
 var Header = exports.Header = function Header(_ref, _ref2) {
-  var state = _ref.state;
-  var actions = _ref2.actions;
+	var state = _ref.state;
+	var actions = _ref2.actions;
 
-  return (0, _hyperapp.h)(
-    "header",
-    null,
-    (0, _hyperapp.h)(
-      "div",
-      { className: "container" },
-      (0, _hyperapp.h)("div", { className: "logo" }),
-      (0, _hyperapp.h)(
-        "nav",
-        null,
-        (0, _hyperapp.h)(
-          "a",
-          { href: "#" },
-          "Menu"
-        ),
-        (0, _hyperapp.h)(
-          "a",
-          { href: "#" },
-          "Party Platters"
-        ),
-        (0, _hyperapp.h)(
-          "a",
-          { href: "#" },
-          "Locations"
-        ),
-        (0, _hyperapp.h)(
-          "a",
-          { href: "#" },
-          "Rewards"
-        ),
-        (0, _hyperapp.h)(
-          "a",
-          { href: "#" },
-          "Reservations"
-        )
-      )
-    )
-  );
+	return (0, _hyperapp.h)(
+		"header",
+		null,
+		(0, _hyperapp.h)(
+			"div",
+			{ className: "container" },
+			(0, _hyperapp.h)("div", { className: "logo" }),
+			(0, _hyperapp.h)(
+				"div",
+				{ className: "hamburger" },
+				(0, _hyperapp.h)("div", null),
+				(0, _hyperapp.h)("div", null),
+				(0, _hyperapp.h)("div", null)
+			),
+			(0, _hyperapp.h)(
+				"nav",
+				null,
+				(0, _hyperapp.h)(
+					"a",
+					{ href: "#" },
+					"Menu"
+				),
+				(0, _hyperapp.h)(
+					"a",
+					{ href: "#" },
+					"Party Platters"
+				),
+				(0, _hyperapp.h)(
+					"a",
+					{ href: "#" },
+					"Locations"
+				),
+				(0, _hyperapp.h)(
+					"a",
+					{ href: "#" },
+					"Rewards"
+				),
+				(0, _hyperapp.h)(
+					"a",
+					{ href: "#" },
+					"Reservations"
+				),
+				(0, _hyperapp.h)(
+					"div",
+					{ className: "close" },
+					(0, _hyperapp.h)("i", { "class": "fas fa-times" })
+				)
+			)
+		)
+	);
 };
 
 /***/ }),
@@ -703,14 +714,18 @@ var SpecialMenu = exports.SpecialMenu = function SpecialMenu(_ref, _ref2) {
       "div",
       { className: "container" },
       (0, _hyperapp.h)(
-        "h6",
-        null,
-        "special menu"
-      ),
-      (0, _hyperapp.h)(
-        "h3",
-        null,
-        "Delicious flavours of autumn"
+        "div",
+        { className: "hContainer" },
+        (0, _hyperapp.h)(
+          "h6",
+          null,
+          "special menu"
+        ),
+        (0, _hyperapp.h)(
+          "h3",
+          null,
+          "Delicious flavours of autumn"
+        )
       ),
       (0, _hyperapp.h)(
         "div",
@@ -864,19 +879,31 @@ var TopImg = exports.TopImg = function TopImg(_ref, _ref2) {
         (0, _hyperapp.h)(
           "div",
           { className: "hours" },
-          "Opening Hours: ",
           (0, _hyperapp.h)(
-            "strong",
+            "span",
             null,
-            "Mon-Fri:"
+            "Opening Hours: "
           ),
-          " 9am - 9pm ",
           (0, _hyperapp.h)(
-            "strong",
+            "span",
             null,
-            "Weekend:"
+            (0, _hyperapp.h)(
+              "strong",
+              null,
+              "Mon-Fri:"
+            ),
+            " 9am - 9pm "
           ),
-          " 9am - 11:00pm"
+          (0, _hyperapp.h)(
+            "span",
+            null,
+            (0, _hyperapp.h)(
+              "strong",
+              null,
+              "Weekend:"
+            ),
+            " 9am - 11:00pm "
+          )
         )
       )
     )

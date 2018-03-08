@@ -27,6 +27,10 @@
         border-right: 1px solid gray;
         font-size: .5rem;
         color: #F4F4F4;
+
+        &:last-child {
+          border:none;
+        }
       }
     }
     .social {
@@ -43,6 +47,24 @@
       line-height: 1.1rem;
     }
 
+  }
+  @media (max-width: 570px) {
+    // height: 100%;
+    .container {
+      .links {
+        li {
+          font-size: 0.8rem;
+          // border:none;
+          // display: block;
+        }
+      }
+
+      .social {
+        .media {
+          padding: 0 5%;
+        }
+      }
+    }
   }
 
 }

@@ -16,7 +16,9 @@ export const TopImg = ({state}, {actions}) => {
           <div>Call for reservations</div>
           <h2>(555) 555-5555</h2>
           <div className="hours">
-            Opening Hours: <strong>Mon-Fri:</strong> 9am - 9pm <strong>Weekend:</strong> 9am - 11:00pm
+            <span>Opening Hours: </span>
+            <span><strong>Mon-Fri:</strong> 9am - 9pm </span>
+            <span><strong>Weekend:</strong> 9am - 11:00pm </span>
           </div>
         </div>
       </div>

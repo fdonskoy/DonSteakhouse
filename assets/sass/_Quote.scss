@@ -35,4 +35,25 @@
       }
     }
   }
+
+  @media (max-width: 377px) {
+    .container {
+      .quoteContainer {
+        margin-left: 30%;
+        .quoteContent {
+          margin: 0 auto;
+          font-family: $storyFont;
+          color: #FEFFFF;
+          text-transform: capitalize;
+          font-size: 2rem;
+          width: 80%;
+          line-height: 3rem;
+          padding: 10% 0;
+          .quote {
+            font-size: 4rem;
+          }
+        }
+      }
+    }
+  }
 }

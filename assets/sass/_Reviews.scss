@@ -1,12 +1,14 @@
 #Reviews {
   background: #FEFFFF;
-  height: 60%;
+  height:auto;
   text-align: right;
   // overflow: hidden;
   position: relative;
   .container {
     padding: 10% 0;
     .row {
+      margin-left: 0;
+      margin-right: 0;
       .first {
         h6 {
           text-transform: uppercase;
@@ -63,6 +65,33 @@
 
       }
 
+    }
+  }
+
+  @media (max-width: 767px) {
+    .container {
+      .row {
+        .first {
+          text-align: center;
+          // width: 50%;
+        }
+        .second {
+          text-align: center;
+          margin-bottom: 5%;
+        }
+      }
+    }
+
+    @media (max-width: 400px) {
+      .container {
+        .row {
+          .second {
+            img {
+              width: 90%;
+            }
+          }
+        }
+      }
     }
   }
 }

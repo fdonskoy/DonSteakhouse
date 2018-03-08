@@ -64,4 +64,21 @@
       }
     }
   }
+
+  @media (max-width: 767px) {
+    .container {
+      .row {
+        .first {
+          text-align: center;
+          p {
+            // padding-bottom: 5%;
+          }
+
+          .quote {
+            // padding-bottom: 10%;
+          }
+        }
+      }
+    }
+  }
 }
