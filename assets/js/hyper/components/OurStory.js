@@ -15,7 +15,7 @@ export const OurStory = ({state, actions}) => {
             <a href="#" className="reserve-btn">Book A Reservation</a>
           </div>
           <div className="col-md-6 second">
-            <img src="https://c.pxhere.com/photos/2b/6f/lamp_chop_meat_cutlet_prepared_restaurant_eating_dinner-714043.jpg!d" />
+            <img src="/images/lambChop.jpg!d" />
           </div>
         </div>
       </div>

@@ -446,11 +446,6 @@ var Header = exports.Header = function Header(_ref) {
 				(0, _hyperapp.h)(
 					"a",
 					{ href: "#" },
-					"Party Platters"
-				),
-				(0, _hyperapp.h)(
-					"a",
-					{ href: "#" },
 					"Locations"
 				),
 				(0, _hyperapp.h)(
@@ -543,7 +538,7 @@ var OurStory = exports.OurStory = function OurStory(_ref) {
         (0, _hyperapp.h)(
           "div",
           { className: "col-md-6 second" },
-          (0, _hyperapp.h)("img", { src: "https://c.pxhere.com/photos/2b/6f/lamp_chop_meat_cutlet_prepared_restaurant_eating_dinner-714043.jpg!d" })
+          (0, _hyperapp.h)("img", { src: "/images/lambChop.jpg!d" })
         )
       )
     )
@@ -780,7 +775,7 @@ var Reviews = exports.Reviews = function Reviews(_ref) {
         (0, _hyperapp.h)(
           "div",
           { className: "col-md-6 second" },
-          (0, _hyperapp.h)("img", { src: "http://pngimg.com/uploads/chef/chef_PNG162.png?i=1" })
+          (0, _hyperapp.h)("img", { src: "/images/chef.png" })
         ),
         (0, _hyperapp.h)(
           "div",

@@ -20,7 +20,7 @@ export const Reviews = ({state, actions}) => {
       <div className="container">
         <div className="row">
           <div className="col-md-6 second">
-            <img src="http://pngimg.com/uploads/chef/chef_PNG162.png?i=1" />
+            <img src="/images/chef.png" />
           </div>
           <div className="col-md-6 first">
             <h6>Review</h6>
