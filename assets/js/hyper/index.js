@@ -1,14 +1,14 @@
 import { h, app } from 'hyperapp'
 import devtools from 'hyperapp-redux-devtools';
-import {actions} from './actions/actions.js'
+import {actions} from './actions/actions.js';
 import {globalState} from './state/globalState.js'
 import App from './components/App.js'
 
 app({
-  state: {globalState},
+  state: globalState,
+  actions,
   view: (state, actions) => <App state={state} actions={actions} />,
   root: document.getElementById('app'),
-  actions,
   events: {
     action(state, actions, { name, data }) {
       console.group("Action Info")

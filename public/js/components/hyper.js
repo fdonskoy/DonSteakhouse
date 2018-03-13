@@ -17,22 +17,43 @@ webpackJsonp([0],[
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var actions = exports.actions = {
-  up: up,
-  intro: intro,
-  showMenu: showMenu
-};
-
-function up(state, actions) {
-  return { count: state.count + 1 };
+function reviewRight(state, actions) {
+  return {
+    reviewIndex: {
+      current: state.reviewIndex.current >= state.reviews.length - 1 ? state.reviews.length - 1 : state.reviewIndex.current + 1
+    }
+  };
 }
 
-function showMenu() {}
+function reviewLeft(state, actions) {
+  console.log('left');
+  return {
+    reviewIndex: {
+      current: state.reviewIndex.current <= 0 ? 0 : state.reviewIndex.current - 1
+    }
+  };
+}
+
+function showMenu() {
+  return { menu: 'active' };
+}
+
+function closeMenu(state, actions) {
+  return { menu: 'inactive' };
+}
 
 function intro(state, actions) {
   console.log('Just ran my first action');
   return { count: state.count + 1 };
 }
+
+var actions = exports.actions = {
+  reviewRight: reviewRight,
+  reviewLeft: reviewLeft,
+  intro: intro,
+  showMenu: showMenu,
+  closeMenu: closeMenu
+};
 
 /***/ }),
 /* 10 */
@@ -101,8 +122,86 @@ function App(_ref) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+var companyInfo = {
+  title: 'the don steakhouse',
+  phone: '(555) 555-5555',
+  address: {
+    state: 'New York',
+    city: 'New York City',
+    address: '167 E 4th St #2, New York, NY 10003'
+  },
+  email: 'fildonskoy@gmail.com'
+};
+
+var specialMenu = [{
+  title: 'Fillet Mignon',
+  description: 'Clean cut of fillet mignon surrounded by roasted red potatoes with rosemary, mushroom sauce, vine',
+  price: '$30'
+}, {
+  title: 'Beef Cutlet',
+  description: 'Clean cut of fillet mignon surrounded by roasted red potatoes with rosemary, mushroom sauce, vine',
+  price: '$20'
+}, {
+  title: 'Party Platter',
+  description: 'Clean cut of fillet mignon surrounded by roasted red potatoes with rosemary, mushroom sauce, vine',
+  price: '$50'
+}];
+
+var reviews = [{
+  quote: "Best restaurant that i used to experience!",
+  body: "Hella lyft cray put a bird on it art party squid pour-over swag organic irony listicle. Chia synth shaman everyday carry tbh, hot chicken pickled. VHS trust fund pitchfork cronut, venmo helvetica thundercats beard edison bulb hexagon offal portland chicharrones.",
+  authorTitle: "Chef Extraordinaire",
+  author: "Fredrick Helsing Von Heisenhoper1"
+}, {
+  quote: "Best restaurant that i used to experience!",
+  body: "Hella lyft cray put a bird on it art party squid pour-over swag organic irony listicle. Chia synth shaman everyday carry tbh, hot chicken pickled. VHS trust fund pitchfork cronut, venmo helvetica thundercats beard edison bulb hexagon offal portland chicharrones.",
+  authorTitle: "Chef Extraordinaire",
+  author: "Fredrick Helsing Von Heisenhoper2"
+}, {
+  quote: "Best restaurant that i used to experience!",
+  body: "Hella lyft cray put a bird on it art party squid pour-over swag organic irony listicle. Chia synth shaman everyday carry tbh, hot chicken pickled. VHS trust fund pitchfork cronut, venmo helvetica thundercats beard edison bulb hexagon offal portland chicharrones.",
+  authorTitle: "Chef Extraordinaire",
+  author: "Fredrick Helsing Von Heisenhoper3"
+}, {
+  quote: "Best restaurant that i used to experience!",
+  body: "Hella lyft cray put a bird on it art party squid pour-over swag organic irony listicle. Chia synth shaman everyday carry tbh, hot chicken pickled. VHS trust fund pitchfork cronut, venmo helvetica thundercats beard edison bulb hexagon offal portland chicharrones.",
+  authorTitle: "Chef Extraordinaire",
+  author: "Fredrick Helsing Von Heisenhoper4"
+}, {
+  quote: "Best restaurant that i used to experience!",
+  body: "Hella lyft cray put a bird on it art party squid pour-over swag organic irony listicle. Chia synth shaman everyday carry tbh, hot chicken pickled. VHS trust fund pitchfork cronut, venmo helvetica thundercats beard edison bulb hexagon offal portland chicharrones.",
+  authorTitle: "Chef Extraordinaire",
+  author: "Fredrick Helsing Von Heisenhoper5"
+}];
+
+var bannerQuote = [{
+  author: 'Fil Don',
+  quote: 'I Love Cooking For Myself And For My Family'
+}];
+
+function reviewLeft() {
+  globalState.reviewIndex.current - 1;
+}
+function reviewRight() {
+  globalState.reviewIndex.current + 1;
+}
+
+var actions = {
+  reviewRight: reviewRight,
+  reviewLeft: reviewLeft
+};
+
 var globalState = exports.globalState = {
-  count: 0
+  count: 0,
+  companyInfo: companyInfo,
+  specialMenu: specialMenu,
+  reviews: reviews,
+  reviewIndex: {
+    current: 0
+  },
+  bannerQuote: bannerQuote,
+  actions: actions,
+  menu: 'inactive'
 };
 
 /***/ }),
@@ -120,9 +219,9 @@ exports.Contact = undefined;
 
 var _hyperapp = __webpack_require__(0);
 
-var Contact = exports.Contact = function Contact(_ref, _ref2) {
-  var state = _ref.state;
-  var actions = _ref2.actions;
+var Contact = exports.Contact = function Contact(_ref) {
+  var state = _ref.state,
+      actions = _ref.actions;
 
   return (0, _hyperapp.h)(
     "section",
@@ -154,14 +253,16 @@ var Contact = exports.Contact = function Contact(_ref, _ref2) {
             (0, _hyperapp.h)(
               "strong",
               null,
-              "New York City,"
+              state.companyInfo.address.city,
+              ","
             ),
-            " New York"
+            " ",
+            state.companyInfo.address.state
           ),
           (0, _hyperapp.h)(
             "div",
             { className: "address" },
-            "167 E 4th St #2, New York, NY 10003"
+            state.companyInfo.address.address
           ),
           (0, _hyperapp.h)(
             "div",
@@ -171,7 +272,7 @@ var Contact = exports.Contact = function Contact(_ref, _ref2) {
               null,
               "Email: "
             ),
-            "fildonskoy@gmail.com"
+            state.companyInfo.email
           )
         ),
         (0, _hyperapp.h)(
@@ -225,9 +326,9 @@ exports.Footer = undefined;
 
 var _hyperapp = __webpack_require__(0);
 
-var Footer = exports.Footer = function Footer(_ref, _ref2) {
-  var state = _ref.state;
-  var actions = _ref2.actions;
+var Footer = exports.Footer = function Footer(_ref) {
+  var state = _ref.state,
+      actions = _ref.actions;
 
   return (0, _hyperapp.h)(
     "section",
@@ -316,9 +417,9 @@ var _hyperapp = __webpack_require__(0);
 //   )
 // }
 
-var Header = exports.Header = function Header(_ref, _ref2) {
-	var state = _ref.state;
-	var actions = _ref2.actions;
+var Header = exports.Header = function Header(_ref) {
+	var state = _ref.state,
+	    actions = _ref.actions;
 
 	return (0, _hyperapp.h)(
 		"header",
@@ -329,14 +430,14 @@ var Header = exports.Header = function Header(_ref, _ref2) {
 			(0, _hyperapp.h)("div", { className: "logo" }),
 			(0, _hyperapp.h)(
 				"div",
-				{ className: "hamburger" },
+				{ className: "hamburger", onclick: actions.showMenu },
 				(0, _hyperapp.h)("div", null),
 				(0, _hyperapp.h)("div", null),
 				(0, _hyperapp.h)("div", null)
 			),
 			(0, _hyperapp.h)(
 				"nav",
-				null,
+				{ className: state.menu },
 				(0, _hyperapp.h)(
 					"a",
 					{ href: "#" },
@@ -364,7 +465,7 @@ var Header = exports.Header = function Header(_ref, _ref2) {
 				),
 				(0, _hyperapp.h)(
 					"div",
-					{ className: "close" },
+					{ className: "close", onclick: actions.closeMenu },
 					(0, _hyperapp.h)("i", { "class": "fas fa-times" })
 				)
 			)
@@ -386,9 +487,9 @@ exports.OurStory = undefined;
 
 var _hyperapp = __webpack_require__(0);
 
-var OurStory = exports.OurStory = function OurStory(_ref, _ref2) {
-  var state = _ref.state;
-  var actions = _ref2.actions;
+var OurStory = exports.OurStory = function OurStory(_ref) {
+  var state = _ref.state,
+      actions = _ref.actions;
 
   return (0, _hyperapp.h)(
     "section",
@@ -463,9 +564,9 @@ exports.PromotionsAndEvents = undefined;
 
 var _hyperapp = __webpack_require__(0);
 
-var PromotionsAndEvents = exports.PromotionsAndEvents = function PromotionsAndEvents(_ref, _ref2) {
-  var state = _ref.state;
-  var actions = _ref2.actions;
+var PromotionsAndEvents = exports.PromotionsAndEvents = function PromotionsAndEvents(_ref) {
+  var state = _ref.state,
+      actions = _ref.actions;
 
   return (0, _hyperapp.h)(
     "section",
@@ -573,17 +674,13 @@ exports.Quote = undefined;
 
 var _hyperapp = __webpack_require__(0);
 
-var Quote = exports.Quote = function Quote(_ref, _ref2) {
-  var state = _ref.state;
-  var actions = _ref2.actions;
+var Quote = exports.Quote = function Quote(_ref) {
+  var state = _ref.state,
+      actions = _ref.actions;
 
-  return (0, _hyperapp.h)(
-    "section",
-    { id: "Quote" },
-    (0, _hyperapp.h)(
-      "div",
-      { className: "container" },
-      (0, _hyperapp.h)(
+  var quote = function quote() {
+    return state.bannerQuote.map(function (quote) {
+      return (0, _hyperapp.h)(
         "div",
         { className: "quoteContainer" },
         (0, _hyperapp.h)(
@@ -594,14 +691,25 @@ var Quote = exports.Quote = function Quote(_ref, _ref2) {
             { className: "quote" },
             "\u201C"
           ),
-          "i love cooking for myself and for my family"
+          quote.quote
         ),
         (0, _hyperapp.h)(
           "div",
           { className: "quoteAuthor" },
-          "- Fil Don -"
+          "- ",
+          quote.author,
+          " -"
         )
-      )
+      );
+    });
+  };
+  return (0, _hyperapp.h)(
+    "section",
+    { id: "Quote" },
+    (0, _hyperapp.h)(
+      "div",
+      { className: "container" },
+      quote()
     )
   );
 };
@@ -620,10 +728,46 @@ exports.Reviews = undefined;
 
 var _hyperapp = __webpack_require__(0);
 
-var Reviews = exports.Reviews = function Reviews(_ref, _ref2) {
-  var state = _ref.state;
-  var actions = _ref2.actions;
+var Reviews = exports.Reviews = function Reviews(_ref) {
+  var state = _ref.state,
+      actions = _ref.actions;
 
+  var currentReview = state.reviewIndex.current;
+  var reviews = function reviews() {
+    return (0, _hyperapp.h)(
+      "div",
+      { className: "review" },
+      (0, _hyperapp.h)(
+        "div",
+        { className: "reviewQuote" },
+        "\"",
+        state.reviews[currentReview].quote,
+        "\""
+      ),
+      (0, _hyperapp.h)(
+        "p",
+        null,
+        state.reviews[currentReview].body
+      ),
+      (0, _hyperapp.h)(
+        "div",
+        { className: "quote" },
+        (0, _hyperapp.h)(
+          "strong",
+          null,
+          state.reviews[currentReview].authorTitle
+        ),
+        " ",
+        (0, _hyperapp.h)(
+          "span",
+          null,
+          "\u25E6"
+        ),
+        " ",
+        state.reviews[currentReview].author
+      )
+    );
+  };
   return (0, _hyperapp.h)(
     "section",
     { id: "Reviews" },
@@ -653,35 +797,25 @@ var Reviews = exports.Reviews = function Reviews(_ref, _ref2) {
           ),
           (0, _hyperapp.h)(
             "div",
-            { className: "reviewQuote" },
-            "\"Best restaurant that i used to experience!\""
-          ),
-          (0, _hyperapp.h)(
-            "p",
-            null,
-            "Hella lyft cray put a bird on it art party squid pour-over swag organic irony listicle. Chia synth shaman everyday carry tbh, hot chicken pickled. VHS trust fund pitchfork cronut, venmo helvetica thundercats beard edison bulb hexagon offal portland chicharrones."
+            { className: "reviewContainer" },
+            reviews()
           ),
           (0, _hyperapp.h)(
             "div",
-            { className: "quote" },
+            { className: "arrow", onclick: state.actions.reviewLeft },
             (0, _hyperapp.h)(
-              "strong",
-              null,
-              "Chef Extraordinaire"
+              "a",
+              { onclick: actions.reviewLeft,
+                href: "",
+                className: "left " + (state.reviewIndex.current > 0 ? 'active' : '') },
+              (0, _hyperapp.h)("i", { "class": "fas fa-arrow-left" })
             ),
-            " ",
             (0, _hyperapp.h)(
-              "span",
-              null,
-              "\u25E6"
-            ),
-            " Fredrick Helsing Von Heisenhoper"
-          ),
-          (0, _hyperapp.h)(
-            "div",
-            { className: "arrow" },
-            (0, _hyperapp.h)("a", { href: "#", className: "left" }),
-            (0, _hyperapp.h)("a", { href: "#", className: "right" })
+              "a",
+              { onclick: actions.reviewRight,
+                href: "", className: "right " + (state.reviewIndex.current < state.reviews.length - 1 ? 'active' : '') },
+              (0, _hyperapp.h)("i", { "class": "fas fa-arrow-right" })
+            )
           )
         )
       )
@@ -703,9 +837,41 @@ exports.SpecialMenu = undefined;
 
 var _hyperapp = __webpack_require__(0);
 
-var SpecialMenu = exports.SpecialMenu = function SpecialMenu(_ref, _ref2) {
-  var state = _ref.state;
-  var actions = _ref2.actions;
+var SpecialMenu = exports.SpecialMenu = function SpecialMenu(_ref) {
+  var state = _ref.state,
+      actions = _ref.actions;
+
+  var menuItems = function menuItems() {
+    return state.specialMenu.map(function (item) {
+      return (0, _hyperapp.h)(
+        "div",
+        { className: "one special" },
+        (0, _hyperapp.h)(
+          "div",
+          { className: "specialTop" },
+          (0, _hyperapp.h)(
+            "div",
+            { className: "specialPrice" },
+            item.price
+          )
+        ),
+        (0, _hyperapp.h)(
+          "div",
+          { className: "specialDescription" },
+          (0, _hyperapp.h)(
+            "div",
+            { className: "dish" },
+            item.title
+          ),
+          (0, _hyperapp.h)(
+            "div",
+            { className: "ingredients" },
+            item.description
+          )
+        )
+      );
+    });
+  };
 
   return (0, _hyperapp.h)(
     "section",
@@ -730,87 +896,7 @@ var SpecialMenu = exports.SpecialMenu = function SpecialMenu(_ref, _ref2) {
       (0, _hyperapp.h)(
         "div",
         { className: "specialContainer" },
-        (0, _hyperapp.h)(
-          "div",
-          { className: "one special" },
-          (0, _hyperapp.h)(
-            "div",
-            { className: "specialTop" },
-            (0, _hyperapp.h)(
-              "div",
-              { className: "specialPrice" },
-              "$30"
-            )
-          ),
-          (0, _hyperapp.h)(
-            "div",
-            { className: "specialDescription" },
-            (0, _hyperapp.h)(
-              "div",
-              { className: "dish" },
-              "Fillet Mignon"
-            ),
-            (0, _hyperapp.h)(
-              "div",
-              { className: "ingredients" },
-              "Clean cut of fillet mignon surrounded by roasted red potatoes with rosemary, mushroom sauce, vine"
-            )
-          )
-        ),
-        (0, _hyperapp.h)(
-          "div",
-          { className: "two special" },
-          (0, _hyperapp.h)(
-            "div",
-            { className: "specialTop" },
-            (0, _hyperapp.h)(
-              "div",
-              { className: "specialPrice" },
-              "$30"
-            )
-          ),
-          (0, _hyperapp.h)(
-            "div",
-            { className: "specialDescription" },
-            (0, _hyperapp.h)(
-              "div",
-              { className: "dish" },
-              "Fillet Mignon"
-            ),
-            (0, _hyperapp.h)(
-              "div",
-              { className: "ingredients" },
-              "Clean cut of fillet mignon surrounded by roasted red potatoes with rosemary, mushroom sauce, vine"
-            )
-          )
-        ),
-        (0, _hyperapp.h)(
-          "div",
-          { className: "three special" },
-          (0, _hyperapp.h)(
-            "div",
-            { className: "specialTop" },
-            (0, _hyperapp.h)(
-              "div",
-              { className: "specialPrice" },
-              "$30"
-            )
-          ),
-          (0, _hyperapp.h)(
-            "div",
-            { className: "specialDescription" },
-            (0, _hyperapp.h)(
-              "div",
-              { className: "dish" },
-              "Fillet Mignon"
-            ),
-            (0, _hyperapp.h)(
-              "div",
-              { className: "ingredients" },
-              "Clean cut of fillet mignon surrounded by roasted red potatoes with rosemary, mushroom sauce, vine"
-            )
-          )
-        )
+        menuItems()
       ),
       (0, _hyperapp.h)(
         "div",
@@ -839,9 +925,9 @@ exports.TopImg = undefined;
 
 var _hyperapp = __webpack_require__(0);
 
-var TopImg = exports.TopImg = function TopImg(_ref, _ref2) {
-  var state = _ref.state;
-  var actions = _ref2.actions;
+var TopImg = exports.TopImg = function TopImg(_ref) {
+  var state = _ref.state,
+      actions = _ref.actions;
 
   return (0, _hyperapp.h)(
     "section",
@@ -860,7 +946,7 @@ var TopImg = exports.TopImg = function TopImg(_ref, _ref2) {
         (0, _hyperapp.h)(
           "h1",
           null,
-          "The Don Steakhouse"
+          state.companyInfo.title
         )
       ),
       (0, _hyperapp.h)(
@@ -874,7 +960,7 @@ var TopImg = exports.TopImg = function TopImg(_ref, _ref2) {
         (0, _hyperapp.h)(
           "h2",
           null,
-          "(555) 555-5555"
+          state.companyInfo.phone
         ),
         (0, _hyperapp.h)(
           "div",
@@ -934,12 +1020,12 @@ var _App2 = _interopRequireDefault(_App);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _hyperapp.app)({
-  state: { globalState: _globalState.globalState },
+  state: _globalState.globalState,
+  actions: _actions.actions,
   view: function view(state, actions) {
     return (0, _hyperapp.h)(_App2.default, { state: state, actions: actions });
   },
   root: document.getElementById('app'),
-  actions: _actions.actions,
   events: {
     action: function action(state, actions, _ref) {
       var name = _ref.name,

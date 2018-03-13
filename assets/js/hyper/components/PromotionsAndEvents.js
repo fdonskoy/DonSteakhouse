@@ -1,6 +1,6 @@
 import {h, app} from 'hyperapp'
 
-export const PromotionsAndEvents = ({state}, {actions}) => {
+export const PromotionsAndEvents = ({state, actions}) => {
   return (
     <section id="PromotionsAndEvents">
       <div className="container">

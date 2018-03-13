@@ -1,6 +1,6 @@
 import {h, app} from 'hyperapp'
 
-export const Footer = ({state}, {actions}) => {
+export const Footer = ({state, actions}) => {
   return (
     <section id="Footer">
       <div className="container">

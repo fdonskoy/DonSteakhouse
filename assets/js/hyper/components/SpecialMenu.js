@@ -1,6 +1,24 @@
 import {h, app} from 'hyperapp'
 
-export const SpecialMenu = ({state}, {actions}) => {
+export const SpecialMenu = ({state, actions}) => {
+  let menuItems = (() => {
+    return state.specialMenu.map((item) => {
+      return (
+        <div className="one special">
+          <div className="specialTop">
+            <div className="specialPrice">
+              {item.price}
+            </div>
+          </div>
+          <div className="specialDescription">
+            <div className="dish">{item.title}</div>
+            <div className="ingredients">{item.description}</div>
+          </div>
+        </div>
+      )
+    })
+  })
+
   return (
     <section id="SpecialMenu">
       <div className="container">
@@ -9,42 +27,7 @@ export const SpecialMenu = ({state}, {actions}) => {
           <h3>Delicious flavours of autumn</h3>
         </div>
         <div className="specialContainer">
-          <div className="one special">
-            <div className="specialTop">
-              <div className="specialPrice">
-                $30
-              </div>
-            </div>
-            <div className="specialDescription">
-              <div className="dish">Fillet Mignon</div>
-              <div className="ingredients">Clean cut of fillet mignon surrounded by roasted red potatoes with
-              rosemary, mushroom sauce, vine</div>
-            </div>
-          </div>
-          <div className="two special">
-            <div className="specialTop">
-              <div className="specialPrice">
-                $30
-              </div>
-            </div>
-            <div className="specialDescription">
-              <div className="dish">Fillet Mignon</div>
-              <div className="ingredients">Clean cut of fillet mignon surrounded by roasted red potatoes with
-              rosemary, mushroom sauce, vine</div>
-            </div>
-          </div>
-          <div className="three special">
-            <div className="specialTop">
-              <div className="specialPrice">
-                $30
-              </div>
-            </div>
-            <div className="specialDescription">
-              <div className="dish">Fillet Mignon</div>
-              <div className="ingredients">Clean cut of fillet mignon surrounded by roasted red potatoes with
-              rosemary, mushroom sauce, vine</div>
-            </div>
-          </div>
+          {menuItems()}
         </div>
         <div className="menuLink">
           <a href="#">View full menu</a>

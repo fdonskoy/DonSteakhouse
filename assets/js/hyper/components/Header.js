@@ -7,23 +7,23 @@ import {h, app} from 'hyperapp'
 //   )
 // }
 
-export const Header = ({ state }, { actions }) => {
+export const Header = ({ state, actions }) => {
 	return (
 		<header>
 			<div className="container">
 				<div className="logo" />
-				<div className="hamburger">
+				<div className="hamburger" onclick={actions.showMenu}>
 					<div />
 					<div />
 					<div />
 				</div>
-				<nav>
+				<nav className={state.menu}>
 					<a href="#">Menu</a>
 					<a href="#">Party Platters</a>
 					<a href="#">Locations</a>
 					<a href="#">Rewards</a>
 					<a href="#">Reservations</a>
-					<div className="close">
+					<div className="close" onclick={actions.closeMenu}>
 						<i class="fas fa-times" />
 					</div>
 				</nav>

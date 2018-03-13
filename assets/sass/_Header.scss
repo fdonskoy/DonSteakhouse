@@ -40,7 +40,8 @@ header {
 			text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
 			&:hover {
-				color: #af111c;
+				color: #BCBDBE;
+				text-shadow: 0, 0, 0, 0;
 			}
 		}
 		.close {
@@ -68,6 +69,7 @@ header {
 	//CSS
 	header {
 		height: 100%;
+		overflow: hidden;
 		.logo {
 			display: inline-block;
 		}
@@ -83,13 +85,13 @@ header {
 
 			&:hover {
 				div {
-					background-color: #af111c;
+					background-color: #BCBDBE;
 				}
 			}
 		}
 
 		nav {
-			display:none;
+			// display:none;
 			transition: ease-in-out 0.5s;
 			background: black;
 			position: absolute;
@@ -98,6 +100,11 @@ header {
 			width: 100%;
 			height: 100%;
 			text-align: center;
+
+			&.active {
+				// display:block;
+				right: 0;
+			}
 			a {
 				display: block;
 				width: 50%;
@@ -107,13 +114,13 @@ header {
 
 			.close {
 				display: block;
-				top: 2%;
-				right: 5%;
+				top: 3%;
+    		right: 8%;
 				position: absolute;
 				font-size: 2rem;
 
 				&:hover {
-					color: #af111c;
+					color: #BCBDBE;
 					cursor: pointer;
 				}
 			}

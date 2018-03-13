@@ -25,32 +25,61 @@
           font-family: $storyFont;
           color: #2E2F30;
         }
+        .reviewContainer {
+          overflow: hidden;
+          .review {
+            display: inline-block;
+            width: 100%;
+            .reviewQuote {
+              padding: 10% 0;
+              font-weight: 700;
+            }
 
-        .reviewQuote {
-          padding: 10% 0;
-          font-weight: 700;
-        }
+            p {
+              word-spacing: 1px;
+              padding: 0 0 10% 0;
+              line-height: 1.5rem;
+              color: #BCBDBE;
+            }
+            .quote {
+              padding-bottom: 20%;
+              color: #060606;
+              font-weight: 700;
+              span {
+                font-size: .9rem;
+                font-weight: 100;
+                color: gray;
+              }
 
-        p {
-          word-spacing: 1px;
-          padding: 0 0 10% 0;
-          line-height: 1.5rem;
-          color: #BCBDBE;
-        }
-        .quote {
-          padding-bottom: 20%;
-          color: #060606;
-          font-weight: 700;
-          span {
-            font-size: .9rem;
-            font-weight: 100;
-            color: gray;
+              strong {
+                color: #BCBDBE;
+                font-weight: 700;
+                font-style: italic;
+              }
+            }
           }
+        }
 
-          strong {
+        .arrow {
+          padding: 0 10% 0 0;
+          a {
+            padding: 0 10% 0 0;
             color: #BCBDBE;
-            font-weight: 700;
-            font-style: italic;
+            cursor: auto;
+
+            .fa-arrow-left {
+              text-decoration: none;
+              font-size: 1.5rem;
+
+            }
+            .fa-arrow-right {
+              text-decoration: none;
+              font-size: 1.5rem;
+            }
+            &.active {
+              color: #2E2F30;
+              cursor: pointer;
+            }
           }
         }
         .reserve-btn {
@@ -74,6 +103,13 @@
         .first {
           text-align: center;
           // width: 50%;
+
+          .arrow {
+            padding: 0;
+            a {
+              padding: 0 5% 0 0;
+            }
+          }
         }
         .second {
           text-align: center;
