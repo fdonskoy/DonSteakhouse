@@ -1,12 +1,12 @@
 #Quote {
   background: #FEFFFF;
   height: 50%;
-
   background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),
   url("/images/salad.jpeg");
   background-position: center;
   background-size: cover;
   .container {
+    // overflow-x: hidden;
     // padding: 10% 0;
     text-align: center;
     display: flex;

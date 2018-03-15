@@ -113,8 +113,7 @@ function App(_ref) {
     (0, _hyperapp.h)(_Reviews.Reviews, { state: state, actions: actions }),
     (0, _hyperapp.h)(_PromotionsAndEvents.PromotionsAndEvents, { state: state, actions: actions }),
     (0, _hyperapp.h)(_Contact.Contact, { state: state, actions: actions }),
-    (0, _hyperapp.h)(_Footer.Footer, { state: state, actions: actions }),
-    (0, _hyperapp.h)(_Reservations.Reservations, { state: state, actions: actions })
+    (0, _hyperapp.h)(_Footer.Footer, { state: state, actions: actions })
   );
 }
 // <Header state={state} actions={actions}/>
@@ -594,10 +593,10 @@ var PromotionsAndEvents = exports.PromotionsAndEvents = function PromotionsAndEv
       (0, _hyperapp.h)(
         "div",
         { className: "specialContainer" },
-        (0, _hyperapp.h)("div", { className: "box image1", "data-aos": "fade-down" }),
+        (0, _hyperapp.h)("div", { className: "box image1", "data-aos": "fade-right" }),
         (0, _hyperapp.h)(
           "div",
-          { className: "box event", "data-aos": "fade-down" },
+          { className: "box event", "data-aos": "fade-right" },
           (0, _hyperapp.h)(
             "div",
             { className: "eventTitle" },
@@ -630,7 +629,7 @@ var PromotionsAndEvents = exports.PromotionsAndEvents = function PromotionsAndEv
         ),
         (0, _hyperapp.h)(
           "div",
-          { className: "box event", "data-aos": "zoom-out-up" },
+          { className: "box event", "data-aos": "fade-right" },
           (0, _hyperapp.h)(
             "div",
             { className: "eventTitle" },
@@ -661,7 +660,7 @@ var PromotionsAndEvents = exports.PromotionsAndEvents = function PromotionsAndEv
             )
           )
         ),
-        (0, _hyperapp.h)("div", { className: "box image2", "data-aos": "zoom-out-up" })
+        (0, _hyperapp.h)("div", { className: "box image2", "data-aos": "fade-right" })
       )
     )
   );

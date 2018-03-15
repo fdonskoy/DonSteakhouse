@@ -26,7 +26,6 @@ export default function App({state, actions}) {
       <PromotionsAndEvents state={state} actions={actions}/>
       <Contact state={state} actions={actions}/>
       <Footer state={state} actions={actions}/>
-      <Reservations state={state} actions={actions}/>
     </div>
   )
 }
