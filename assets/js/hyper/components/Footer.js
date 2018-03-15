@@ -3,7 +3,7 @@ import {h, app} from 'hyperapp'
 export const Footer = ({state, actions}) => {
   return (
     <section id="Footer">
-      <div className="container" data-aos="zoom-in">
+      <div className="container">
         <div className="logo">
         </div>
         <div className="links">

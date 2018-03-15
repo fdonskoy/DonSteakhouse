@@ -344,7 +344,7 @@ var Footer = exports.Footer = function Footer(_ref) {
     { id: "Footer" },
     (0, _hyperapp.h)(
       "div",
-      { className: "container", "data-aos": "zoom-in" },
+      { className: "container" },
       (0, _hyperapp.h)("div", { className: "logo" }),
       (0, _hyperapp.h)(
         "div",

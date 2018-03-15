@@ -20,7 +20,7 @@
     h6 {
       letter-spacing: .5rem;
       text-transform: uppercase;
-      font-size: 0.7rem;
+      font-size: 0.8rem;
       padding-bottom: 3%;
       color: #B6B7B8;
       font-family: $textFont;
@@ -52,8 +52,10 @@
           font-family: $restaurantTitleFont;
           color: lightgray;
           font-weight: 700;
+          color: #141414;
+          font-weight: 100;
           strong {
-            color: #141414;
+            // color: #141414;
           }
         }
         .address {
@@ -61,13 +63,13 @@
           font-family: $textFont;
           font-size: 0.8rem;
           line-height: 1.2rem;
-          font-weight: 700;
+          font-weight: 500;
           padding: 5% 0;
         }
         .email {
           color: #141414;
           font-family: $textFont;
-          font-size: 0.7rem;
+          font-size: 0.8rem;
           line-height: 1.2rem;
           strong {
             font-weight: 700;
@@ -79,9 +81,9 @@
         float: right;
         text-align: left;
         width: 50%;
-        color: #B6B7B8;
+        // color: #B6B7B8;
         font-family: $textFont;
-        font-size: 0.6rem;
+        font-size: 0.8rem;
         line-height: 1.2rem;
         font-weight: 700;
 
@@ -96,7 +98,7 @@
           font-weight: 500;
           padding: 5% 0 2% 0;
           line-height: 1.5rem;
-          width: 50%;
+          width: 80%;
           strong {
             font-weight: 700;
             color: #141414;
@@ -130,7 +132,7 @@
             }
           }
           .address {
-            font-size: 0.7rem;
+            font-size: 0.8rem;
           }
         }
 

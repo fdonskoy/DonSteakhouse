@@ -25,11 +25,15 @@
         display: inline-block;
         padding: 0 3%;
         border-right: 1px solid gray;
-        font-size: .5rem;
+        font-size: 1rem;
         color: #F4F4F4;
+        cursor: pointer;
 
         &:last-child {
           border:none;
+        }
+        &:hover {
+          color: #6b6b6b;
         }
       }
     }
@@ -37,8 +41,13 @@
       padding-bottom: 3%;
 
       .media {
+        cursor: pointer;
         display: inline-block;
         padding: 0 2%;
+
+        &:hover {
+          color: #6b6b6b;
+        }
       }
     }
     .copyright {

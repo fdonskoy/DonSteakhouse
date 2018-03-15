@@ -5,7 +5,7 @@
   // overflow: hidden;
   position: relative;
   .container {
-    padding: 10% 0;
+    padding: 10% 0 0 0;
     .row {
       margin-left: 0;
       margin-right: 0;
@@ -40,7 +40,7 @@
               word-spacing: 1px;
               padding: 0 0 10% 0;
               line-height: 1.5rem;
-              color: #BCBDBE;
+              color: #6b6b6b;
             }
             .quote {
               padding-bottom: 20%;
@@ -100,6 +100,7 @@
 
   @media (max-width: 767px) {
     .container {
+      padding: 10% 0;
       .row {
         .first {
           text-align: center;
