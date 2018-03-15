@@ -19,13 +19,13 @@ export const Reviews = ({state, actions}) => {
     <section id="Reviews">
       <div className="container">
         <div className="row">
-          <div className="col-md-6 second">
+          <div className="col-md-6 second" data-aos="fade-right">
             <img src="/images/chef.png" />
           </div>
           <div className="col-md-6 first">
             <h6>Review</h6>
             <h2>See what others say about us ;)</h2>
-            <div className="reviewContainer">
+            <div className="reviewContainer" data-aos="fade-up">
               {reviews()}
             </div>
             <div className="arrow" onclick={state.actions.reviewLeft}>

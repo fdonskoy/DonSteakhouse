@@ -42,6 +42,10 @@ function closeMenu(state, actions) {
   return { menu: 'inactive' };
 }
 
+function close(state, actions) {
+  return { times: !state.times };
+}
+
 function intro(state, actions) {
   console.log('Just ran my first action');
   return { count: state.count + 1 };
@@ -52,7 +56,8 @@ var actions = exports.actions = {
   reviewLeft: reviewLeft,
   intro: intro,
   showMenu: showMenu,
-  closeMenu: closeMenu
+  closeMenu: closeMenu,
+  close: close
 };
 
 /***/ }),
@@ -71,21 +76,23 @@ var _hyperapp = __webpack_require__(0);
 
 var _Header = __webpack_require__(15);
 
-var _TopImg = __webpack_require__(21);
+var _TopImg = __webpack_require__(22);
 
 var _OurStory = __webpack_require__(16);
 
-var _SpecialMenu = __webpack_require__(20);
+var _SpecialMenu = __webpack_require__(21);
 
 var _Quote = __webpack_require__(18);
 
-var _Reviews = __webpack_require__(19);
+var _Reviews = __webpack_require__(20);
 
 var _PromotionsAndEvents = __webpack_require__(17);
 
 var _Contact = __webpack_require__(13);
 
 var _Footer = __webpack_require__(14);
+
+var _Reservations = __webpack_require__(19);
 
 // const Header = ({state}, {actions}) => {
 //   return <h1>something</h1>;
@@ -106,7 +113,8 @@ function App(_ref) {
     (0, _hyperapp.h)(_Reviews.Reviews, { state: state, actions: actions }),
     (0, _hyperapp.h)(_PromotionsAndEvents.PromotionsAndEvents, { state: state, actions: actions }),
     (0, _hyperapp.h)(_Contact.Contact, { state: state, actions: actions }),
-    (0, _hyperapp.h)(_Footer.Footer, { state: state, actions: actions })
+    (0, _hyperapp.h)(_Footer.Footer, { state: state, actions: actions }),
+    (0, _hyperapp.h)(_Reservations.Reservations, { state: state, actions: actions })
   );
 }
 // <Header state={state} actions={actions}/>
@@ -151,27 +159,27 @@ var reviews = [{
   quote: "Best restaurant that i used to experience!",
   body: "Hella lyft cray put a bird on it art party squid pour-over swag organic irony listicle. Chia synth shaman everyday carry tbh, hot chicken pickled. VHS trust fund pitchfork cronut, venmo helvetica thundercats beard edison bulb hexagon offal portland chicharrones.",
   authorTitle: "Chef Extraordinaire",
-  author: "Fredrick Helsing Von Heisenhoper1"
+  author: "Fredrick Helsing Von Heisenhoper"
 }, {
-  quote: "Best restaurant that i used to experience!",
-  body: "Hella lyft cray put a bird on it art party squid pour-over swag organic irony listicle. Chia synth shaman everyday carry tbh, hot chicken pickled. VHS trust fund pitchfork cronut, venmo helvetica thundercats beard edison bulb hexagon offal portland chicharrones.",
-  authorTitle: "Chef Extraordinaire",
-  author: "Fredrick Helsing Von Heisenhoper2"
+  quote: "Unlike any other!",
+  body: "Unicorn banjo woke knausgaard af, viral plaid cold-pressed forage. Air plant cornhole man bun, squid tilde disrupt dreamcatcher. Pickled drinking vinegar polaroid selfies intelligentsia brooklyn meh farm-to-table kitsch glossier. Typewriter try-hard bushwick, celiac cloud bread ugh bicycle rights viral literally fam air plant man braid hexagon. Craft beer keytar quinoa iPhone swag irony fixie four dollar toast poutine prism.",
+  authorTitle: "Executive Producer",
+  author: "Dick Wolfe"
 }, {
-  quote: "Best restaurant that i used to experience!",
-  body: "Hella lyft cray put a bird on it art party squid pour-over swag organic irony listicle. Chia synth shaman everyday carry tbh, hot chicken pickled. VHS trust fund pitchfork cronut, venmo helvetica thundercats beard edison bulb hexagon offal portland chicharrones.",
-  authorTitle: "Chef Extraordinaire",
-  author: "Fredrick Helsing Von Heisenhoper3"
+  quote: "Coming back for fifths!",
+  body: "Pickled cliche direct trade lyft. Drinking vinegar pabst stumptown organic gluten-free bespoke. Butcher subway tile quinoa air plant aesthetic brooklyn. Flexitarian snackwave trust fund hexagon leggings. Paleo microdosing tote bag crucifix fixie wayfarers jianbing art party hammock. Pitchfork schlitz yuccie chambray vegan austin sartorial swag roof party.",
+  authorTitle: "Mayor",
+  author: "Michael Bloomberg"
 }, {
-  quote: "Best restaurant that i used to experience!",
-  body: "Hella lyft cray put a bird on it art party squid pour-over swag organic irony listicle. Chia synth shaman everyday carry tbh, hot chicken pickled. VHS trust fund pitchfork cronut, venmo helvetica thundercats beard edison bulb hexagon offal portland chicharrones.",
-  authorTitle: "Chef Extraordinaire",
-  author: "Fredrick Helsing Von Heisenhoper4"
+  quote: "Stunning food and great recipe!",
+  body: "IPhone four loko twee bitters. Beard etsy helvetica, thundercats readymade bushwick selvage taiyaki pop-up forage distillery. Pug tacos fingerstache, +1 lumbersexual intelligentsia lyft craft beer hoodie succulents bitters tumblr 8-bit. Cloud bread marfa wayfarers ugh aesthetic, mumblecore pour-over before they sold out tote bag letterpress godard dreamcatcher.",
+  authorTitle: "Former First Lady",
+  author: "Michelle Obama"
 }, {
-  quote: "Best restaurant that i used to experience!",
-  body: "Hella lyft cray put a bird on it art party squid pour-over swag organic irony listicle. Chia synth shaman everyday carry tbh, hot chicken pickled. VHS trust fund pitchfork cronut, venmo helvetica thundercats beard edison bulb hexagon offal portland chicharrones.",
-  authorTitle: "Chef Extraordinaire",
-  author: "Fredrick Helsing Von Heisenhoper5"
+  quote: "Superb experience and atmosphere!",
+  body: "Cronut letterpress ugh, coloring book neutra fam gluten-free yr humblebrag tumeric knausgaard waistcoat banh mi ramps. Vexillologist taiyaki snackwave keytar, yuccie blog tacos tattooed tilde pug drinking vinegar flannel hoodie. Selfies prism tote bag chillwave mustache stumptown occupy cloud bread. VHS next level pabst swag marfa.",
+  authorTitle: "Manager",
+  author: "Michael Scott"
 }];
 
 var bannerQuote = [{
@@ -201,7 +209,8 @@ var globalState = exports.globalState = {
   },
   bannerQuote: bannerQuote,
   actions: actions,
-  menu: 'inactive'
+  menu: 'inactive',
+  times: false
 };
 
 /***/ }),
@@ -233,17 +242,17 @@ var Contact = exports.Contact = function Contact(_ref) {
       { className: "container" },
       (0, _hyperapp.h)(
         "h6",
-        null,
+        { "data-aos": "zoom-in" },
         "Contact us"
       ),
       (0, _hyperapp.h)(
         "h3",
-        null,
+        { "data-aos": "zoom-in" },
         "we're here to help"
       ),
       (0, _hyperapp.h)(
         "div",
-        { className: "contactBox" },
+        { className: "contactBox", "data-aos": "flip-left" },
         (0, _hyperapp.h)(
           "div",
           { className: "left" },
@@ -335,7 +344,7 @@ var Footer = exports.Footer = function Footer(_ref) {
     { id: "Footer" },
     (0, _hyperapp.h)(
       "div",
-      { className: "container" },
+      { className: "container", "data-aos": "zoom-in" },
       (0, _hyperapp.h)("div", { className: "logo" }),
       (0, _hyperapp.h)(
         "div",
@@ -426,7 +435,7 @@ var Header = exports.Header = function Header(_ref) {
 		null,
 		(0, _hyperapp.h)(
 			"div",
-			{ className: "container" },
+			{ className: "container", "data-aos": "fade" },
 			(0, _hyperapp.h)("div", { className: "logo" }),
 			(0, _hyperapp.h)(
 				"div",
@@ -440,23 +449,23 @@ var Header = exports.Header = function Header(_ref) {
 				{ className: state.menu },
 				(0, _hyperapp.h)(
 					"a",
-					{ href: "#" },
+					{ href: "#SpecialMenu" },
 					"Menu"
 				),
 				(0, _hyperapp.h)(
 					"a",
 					{ href: "#" },
-					"Locations"
-				),
-				(0, _hyperapp.h)(
-					"a",
-					{ href: "#" },
-					"Rewards"
-				),
-				(0, _hyperapp.h)(
-					"a",
-					{ href: "#" },
 					"Reservations"
+				),
+				(0, _hyperapp.h)(
+					"a",
+					{ href: "#Reviews" },
+					"Reviews"
+				),
+				(0, _hyperapp.h)(
+					"a",
+					{ href: "#Contact" },
+					"Contact"
 				),
 				(0, _hyperapp.h)(
 					"div",
@@ -467,6 +476,9 @@ var Header = exports.Header = function Header(_ref) {
 		)
 	);
 };
+// <a href="#ex1" rel="modal:open">
+// 	<span data-toggle="modal" data-target="#myModal">Reservations</span>
+// </a>
 
 /***/ }),
 /* 16 */
@@ -488,7 +500,7 @@ var OurStory = exports.OurStory = function OurStory(_ref) {
 
   return (0, _hyperapp.h)(
     "section",
-    { id: "OurStory" },
+    { id: "OurStory", "data-aos": "fade-up" },
     (0, _hyperapp.h)(
       "div",
       { className: "container" },
@@ -571,21 +583,21 @@ var PromotionsAndEvents = exports.PromotionsAndEvents = function PromotionsAndEv
       { className: "container" },
       (0, _hyperapp.h)(
         "h6",
-        null,
+        { "data-aos": "fade" },
         "our news"
       ),
       (0, _hyperapp.h)(
         "h3",
-        null,
+        { "data-aos": "fade" },
         "promotions & events"
       ),
       (0, _hyperapp.h)(
         "div",
         { className: "specialContainer" },
-        (0, _hyperapp.h)("div", { className: "box image1" }),
+        (0, _hyperapp.h)("div", { className: "box image1", "data-aos": "fade-right" }),
         (0, _hyperapp.h)(
           "div",
-          { className: "box event" },
+          { className: "box event", "data-aos": "fade-left" },
           (0, _hyperapp.h)(
             "div",
             { className: "eventTitle" },
@@ -618,7 +630,7 @@ var PromotionsAndEvents = exports.PromotionsAndEvents = function PromotionsAndEv
         ),
         (0, _hyperapp.h)(
           "div",
-          { className: "box event" },
+          { className: "box event", "data-aos": "zoom-out-up" },
           (0, _hyperapp.h)(
             "div",
             { className: "eventTitle" },
@@ -635,12 +647,12 @@ var PromotionsAndEvents = exports.PromotionsAndEvents = function PromotionsAndEv
             (0, _hyperapp.h)(
               "div",
               { className: "eventAddress" },
-              "420 amsterdam ave, amsterdam, netherlands"
+              "162 Hamilton St, Macbeth Township, Shakespeare"
             ),
             (0, _hyperapp.h)(
               "div",
               { className: "eventTime" },
-              "4:20 AM - 4:20 PM"
+              "3:00 PM - 7:00 PM"
             ),
             (0, _hyperapp.h)(
               "div",
@@ -649,7 +661,7 @@ var PromotionsAndEvents = exports.PromotionsAndEvents = function PromotionsAndEv
             )
           )
         ),
-        (0, _hyperapp.h)("div", { className: "box image2" })
+        (0, _hyperapp.h)("div", { className: "box image2", "data-aos": "zoom-out-up" })
       )
     )
   );
@@ -677,7 +689,7 @@ var Quote = exports.Quote = function Quote(_ref) {
     return state.bannerQuote.map(function (quote) {
       return (0, _hyperapp.h)(
         "div",
-        { className: "quoteContainer" },
+        { className: "quoteContainer", "data-aos": "fade" },
         (0, _hyperapp.h)(
           "h1",
           { className: "quoteContent" },
@@ -711,6 +723,53 @@ var Quote = exports.Quote = function Quote(_ref) {
 
 /***/ }),
 /* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Reservations = undefined;
+
+var _hyperapp = __webpack_require__(0);
+
+var Reservations = exports.Reservations = function Reservations(_ref) {
+  var state = _ref.state,
+      actions = _ref.actions;
+
+  return (0, _hyperapp.h)(
+    "div",
+    { id: "Reservations" },
+    (0, _hyperapp.h)(
+      "div",
+      { id: "popup1", className: "overlay " + (state.times ? 'diss' : '') },
+      (0, _hyperapp.h)(
+        "div",
+        { className: "popup" },
+        (0, _hyperapp.h)(
+          "h2",
+          null,
+          "Here i am"
+        ),
+        (0, _hyperapp.h)(
+          "a",
+          { className: "close", href: "#", onclick: actions.close },
+          "\xD7"
+        ),
+        (0, _hyperapp.h)(
+          "div",
+          { className: "content" },
+          "Thank to pop me out of that button, but now im done so you can close this window."
+        )
+      )
+    )
+  );
+};
+
+/***/ }),
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -774,7 +833,7 @@ var Reviews = exports.Reviews = function Reviews(_ref) {
         { className: "row" },
         (0, _hyperapp.h)(
           "div",
-          { className: "col-md-6 second" },
+          { className: "col-md-6 second", "data-aos": "fade-right" },
           (0, _hyperapp.h)("img", { src: "/images/chef.png" })
         ),
         (0, _hyperapp.h)(
@@ -792,7 +851,7 @@ var Reviews = exports.Reviews = function Reviews(_ref) {
           ),
           (0, _hyperapp.h)(
             "div",
-            { className: "reviewContainer" },
+            { className: "reviewContainer", "data-aos": "fade-up" },
             reviews()
           ),
           (0, _hyperapp.h)(
@@ -819,7 +878,7 @@ var Reviews = exports.Reviews = function Reviews(_ref) {
 };
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -876,7 +935,7 @@ var SpecialMenu = exports.SpecialMenu = function SpecialMenu(_ref) {
       { className: "container" },
       (0, _hyperapp.h)(
         "div",
-        { className: "hContainer" },
+        { className: "hContainer", "data-aos": "fade" },
         (0, _hyperapp.h)(
           "h6",
           null,
@@ -890,12 +949,12 @@ var SpecialMenu = exports.SpecialMenu = function SpecialMenu(_ref) {
       ),
       (0, _hyperapp.h)(
         "div",
-        { className: "specialContainer" },
+        { className: "specialContainer", "data-aos": "fade-up" },
         menuItems()
       ),
       (0, _hyperapp.h)(
         "div",
-        { className: "menuLink" },
+        { className: "menuLink", "data-aos": "fade" },
         (0, _hyperapp.h)(
           "a",
           { href: "#" },
@@ -907,7 +966,7 @@ var SpecialMenu = exports.SpecialMenu = function SpecialMenu(_ref) {
 };
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -932,7 +991,7 @@ var TopImg = exports.TopImg = function TopImg(_ref) {
       { className: "container" },
       (0, _hyperapp.h)(
         "div",
-        { className: "title" },
+        { className: "title", "data-aos": "fade-right" },
         (0, _hyperapp.h)(
           "h5",
           null,
@@ -946,7 +1005,7 @@ var TopImg = exports.TopImg = function TopImg(_ref) {
       ),
       (0, _hyperapp.h)(
         "div",
-        { className: "contact-info" },
+        { className: "contact-info", id: "contact-info", "data-aos-anchor": "#contact-info", "data-aos-anchor-placement": "top-bottom", "data-aos": "fade-up" },
         (0, _hyperapp.h)(
           "div",
           null,
@@ -992,7 +1051,7 @@ var TopImg = exports.TopImg = function TopImg(_ref) {
 };
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1016,11 +1075,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _hyperapp.app)({
   state: _globalState.globalState,
-  actions: _actions.actions,
   view: function view(state, actions) {
     return (0, _hyperapp.h)(_App2.default, { state: state, actions: actions });
   },
   root: document.getElementById('app'),
+  actions: _actions.actions,
   events: {
     action: function action(state, actions, _ref) {
       var name = _ref.name,
@@ -1039,4 +1098,4 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 });
 
 /***/ })
-],[22]);
+],[23]);

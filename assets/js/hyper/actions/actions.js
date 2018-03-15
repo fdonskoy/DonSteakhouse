@@ -31,6 +31,12 @@ function closeMenu(state, actions){
   )
 }
 
+function close(state, actions){
+  return (
+    {times: !state.times}
+  )
+}
+
 function intro(state, actions){
   console.log('Just ran my first action' )
   return (
@@ -43,5 +49,6 @@ export const actions = {
   reviewLeft,
   intro,
   showMenu,
-  closeMenu
+  closeMenu,
+  close
 }

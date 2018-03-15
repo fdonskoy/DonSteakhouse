@@ -2,7 +2,7 @@ import {h, app} from 'hyperapp'
 
 export const OurStory = ({state, actions}) => {
   return (
-    <section id="OurStory">
+    <section id="OurStory" data-aos="fade-up">
       <div className="container">
         <div className="row">
           <div className="col-md-6 first">

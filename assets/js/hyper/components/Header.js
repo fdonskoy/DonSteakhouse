@@ -10,7 +10,7 @@ import {h, app} from 'hyperapp'
 export const Header = ({ state, actions }) => {
 	return (
 		<header>
-			<div className="container">
+			<div className="container" data-aos="fade">
 				<div className="logo" />
 				<div className="hamburger" onclick={actions.showMenu}>
 					<div />
@@ -18,10 +18,10 @@ export const Header = ({ state, actions }) => {
 					<div />
 				</div>
 				<nav className={state.menu}>
-					<a href="#">Menu</a>
-					<a href="#">Locations</a>
-					<a href="#">Rewards</a>
+					<a href="#SpecialMenu">Menu</a>
 					<a href="#">Reservations</a>
+					<a href="#Reviews">Reviews</a>
+					<a href="#Contact">Contact</a>
 					<div className="close" onclick={actions.closeMenu}>
 						<i class="fas fa-times" />
 					</div>
@@ -30,3 +30,6 @@ export const Header = ({ state, actions }) => {
 		</header>
 	);
 };
+// <a href="#ex1" rel="modal:open">
+// 	<span data-toggle="modal" data-target="#myModal">Reservations</span>
+// </a>

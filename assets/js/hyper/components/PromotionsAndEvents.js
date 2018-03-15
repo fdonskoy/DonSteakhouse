@@ -4,13 +4,13 @@ export const PromotionsAndEvents = ({state, actions}) => {
   return (
     <section id="PromotionsAndEvents">
       <div className="container">
-        <h6>our news</h6>
-        <h3>promotions & events</h3>
+        <h6 data-aos="fade">our news</h6>
+        <h3 data-aos="fade">promotions & events</h3>
         <div className="specialContainer">
-          <div className="box image1">
+          <div className="box image1" data-aos="fade-right">
 
           </div>
-          <div className="box event">
+          <div className="box event" data-aos="fade-left">
             <div className="eventTitle">
               Beef Sauteed onions - Let&#39;s enjoy!
             </div>
@@ -29,7 +29,7 @@ export const PromotionsAndEvents = ({state, actions}) => {
               </div>
             </div>
           </div>
-          <div className="box event">
+          <div className="box event" data-aos="zoom-out-up">
             <div className="eventTitle">
               Art photography in foody
             </div>
@@ -38,17 +38,17 @@ export const PromotionsAndEvents = ({state, actions}) => {
             </div>
             <div className="eventDetails">
               <div className="eventAddress">
-                420 amsterdam ave, amsterdam, netherlands
+                162 Hamilton St, Macbeth Township, Shakespeare
               </div>
               <div className="eventTime">
-              4:20 AM - 4:20 PM
+              3:00 PM - 7:00 PM
               </div>
               <div className="eventDate">
               April 20th, 2018
               </div>
             </div>
           </div>
-          <div className="box image2">
+          <div className="box image2" data-aos="zoom-out-up">
 
           </div>
 

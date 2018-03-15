@@ -8,9 +8,9 @@ export const Contact = ({state, actions}) => {
       </iframe>
 
       <div className="container">
-        <h6>Contact us</h6>
-        <h3>we&#39;re here to help</h3>
-        <div className="contactBox">
+        <h6 data-aos="zoom-in">Contact us</h6>
+        <h3 data-aos="zoom-in">we&#39;re here to help</h3>
+        <div className="contactBox" data-aos="flip-left">
           <div className="left">
             <div className="city">
               <strong>{state.companyInfo.address.city},</strong> {state.companyInfo.address.state}

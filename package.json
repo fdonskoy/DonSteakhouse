@@ -4,6 +4,7 @@
   "description": "cool and fast way to run hyperapp",
   "main": "gulpfile.js",
   "dependencies": {
+    "aos": "^2.2.0",
     "axios": "^0.16.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",

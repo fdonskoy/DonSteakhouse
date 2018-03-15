@@ -6,9 +6,9 @@ import App from './components/App.js'
 
 app({
   state: globalState,
-  actions,
   view: (state, actions) => <App state={state} actions={actions} />,
   root: document.getElementById('app'),
+  actions,
   events: {
     action(state, actions, { name, data }) {
       console.group("Action Info")
@@ -17,7 +17,7 @@ app({
       console.groupEnd()
     },
     load(state, actions) {
-      actions.intro()
+      actions.intro();
     }
   },
   mixins: [devtools()]

@@ -1,9 +1,10 @@
 
 const path = require('path');
 const webpack = require('webpack')
+// require('aos/dist/aos.css');
 
 const VENDOR_LIBS = [
-  'hyperapp',
+  'hyperapp'
 ]
 
 module.exports = {

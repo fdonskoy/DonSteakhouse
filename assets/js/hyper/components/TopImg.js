@@ -4,7 +4,7 @@ export const TopImg = ({state, actions}) => {
   return (
     <section id="TopImg">
       <div className="container">
-        <div className="title">
+        <div className="title" data-aos="fade-right">
           <h5>
             Welcome
           </h5>
@@ -12,7 +12,7 @@ export const TopImg = ({state, actions}) => {
             {state.companyInfo.title}
           </h1>
         </div>
-        <div className="contact-info">
+        <div className="contact-info" id="contact-info" data-aos-anchor="#contact-info" data-aos-anchor-placement="top-bottom" data-aos="fade-up">
           <div>Call for reservations</div>
           <h2>{state.companyInfo.phone}</h2>
           <div className="hours">

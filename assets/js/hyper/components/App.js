@@ -8,6 +8,7 @@ import { Reviews } from './Reviews.js'
 import { PromotionsAndEvents } from './PromotionsAndEvents.js'
 import { Contact } from './Contact.js'
 import { Footer } from './Footer.js'
+import {Reservations} from './Reservations.js'
 
 // const Header = ({state}, {actions}) => {
 //   return <h1>something</h1>;
@@ -25,6 +26,7 @@ export default function App({state, actions}) {
       <PromotionsAndEvents state={state} actions={actions}/>
       <Contact state={state} actions={actions}/>
       <Footer state={state} actions={actions}/>
+      <Reservations state={state} actions={actions}/>
     </div>
   )
 }
