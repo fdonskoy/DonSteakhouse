@@ -93,7 +93,7 @@ header {
 		}
 
 		nav {
-			// display:none;
+			display:none;
 			transition: ease-in-out 0.5s;
 			background: black;
 			position: absolute;
@@ -104,7 +104,7 @@ header {
 			text-align: center;
 
 			&.active {
-				// display:block;
+				display:block;
 				right: 0;
 			}
 			a {

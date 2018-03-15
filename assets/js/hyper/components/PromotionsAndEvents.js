@@ -7,10 +7,10 @@ export const PromotionsAndEvents = ({state, actions}) => {
         <h6 data-aos="fade">our news</h6>
         <h3 data-aos="fade">promotions & events</h3>
         <div className="specialContainer">
-          <div className="box image1" data-aos="fade-right">
+          <div className="box image1" data-aos="fade-down">
 
           </div>
-          <div className="box event" data-aos="fade-left">
+          <div className="box event" data-aos="fade-down">
             <div className="eventTitle">
               Beef Sauteed onions - Let&#39;s enjoy!
             </div>

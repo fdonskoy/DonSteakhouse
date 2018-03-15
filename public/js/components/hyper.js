@@ -594,10 +594,10 @@ var PromotionsAndEvents = exports.PromotionsAndEvents = function PromotionsAndEv
       (0, _hyperapp.h)(
         "div",
         { className: "specialContainer" },
-        (0, _hyperapp.h)("div", { className: "box image1", "data-aos": "fade-right" }),
+        (0, _hyperapp.h)("div", { className: "box image1", "data-aos": "fade-down" }),
         (0, _hyperapp.h)(
           "div",
-          { className: "box event", "data-aos": "fade-left" },
+          { className: "box event", "data-aos": "fade-down" },
           (0, _hyperapp.h)(
             "div",
             { className: "eventTitle" },
