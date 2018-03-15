@@ -4,7 +4,7 @@ export const Quote = ({state, actions}) => {
   let quote = () => {
     return state.bannerQuote.map((quote) => {
       return (
-        <div className="quoteContainer" data-aos="fade">
+        <div className="quoteContainer" data-aos="fade" data-aos-once="true">
           <h1 className="quoteContent">
           <span className="quote">&ldquo;</span>{quote.quote}
           </h1>

@@ -22,14 +22,14 @@ export const SpecialMenu = ({state, actions}) => {
   return (
     <section id="SpecialMenu">
       <div className="container">
-        <div className="hContainer" data-aos="fade">
+        <div className="hContainer" data-aos="fade" data-aos-once="true">
           <h6>special menu</h6>
           <h3>Delicious flavours of autumn</h3>
         </div>
-        <div className="specialContainer" data-aos="fade-up">
+        <div className="specialContainer" data-aos="fade-up" data-aos-once="true">
           {menuItems()}
         </div>
-        <div className="menuLink" data-aos="fade">
+        <div className="menuLink" data-aos="fade" data-aos-once="true">
           <a href="#">View full menu</a>
         </div>
       </div>

@@ -241,17 +241,17 @@ var Contact = exports.Contact = function Contact(_ref) {
       { className: "container" },
       (0, _hyperapp.h)(
         "h6",
-        { "data-aos": "zoom-in" },
+        { "data-aos": "zoom-in", "data-aos-once": "true" },
         "Contact us"
       ),
       (0, _hyperapp.h)(
         "h3",
-        { "data-aos": "zoom-in" },
+        { "data-aos": "zoom-in", "data-aos-once": "true" },
         "we're here to help"
       ),
       (0, _hyperapp.h)(
         "div",
-        { className: "contactBox", "data-aos": "flip-left" },
+        { className: "contactBox", "data-aos": "flip-left", "data-aos-once": "true" },
         (0, _hyperapp.h)(
           "div",
           { className: "left" },
@@ -499,7 +499,7 @@ var OurStory = exports.OurStory = function OurStory(_ref) {
 
   return (0, _hyperapp.h)(
     "section",
-    { id: "OurStory", "data-aos": "fade-up" },
+    { id: "OurStory", "data-aos": "fade-up", "data-aos-once": "true" },
     (0, _hyperapp.h)(
       "div",
       { className: "container" },
@@ -582,21 +582,21 @@ var PromotionsAndEvents = exports.PromotionsAndEvents = function PromotionsAndEv
       { className: "container" },
       (0, _hyperapp.h)(
         "h6",
-        { "data-aos": "fade" },
+        { "data-aos": "fade", "data-aos-once": "true" },
         "our news"
       ),
       (0, _hyperapp.h)(
         "h3",
-        { "data-aos": "fade" },
+        { "data-aos": "fade", "data-aos-once": "true" },
         "promotions & events"
       ),
       (0, _hyperapp.h)(
         "div",
         { className: "specialContainer" },
-        (0, _hyperapp.h)("div", { className: "box image1", "data-aos": "fade-right" }),
+        (0, _hyperapp.h)("div", { className: "box image1", "data-aos": "fade-right", "data-aos-once": "true" }),
         (0, _hyperapp.h)(
           "div",
-          { className: "box event", "data-aos": "fade-right" },
+          { className: "box event", "data-aos": "fade-right", "data-aos-once": "true" },
           (0, _hyperapp.h)(
             "div",
             { className: "eventTitle" },
@@ -629,7 +629,7 @@ var PromotionsAndEvents = exports.PromotionsAndEvents = function PromotionsAndEv
         ),
         (0, _hyperapp.h)(
           "div",
-          { className: "box event", "data-aos": "fade-right" },
+          { className: "box event", "data-aos": "fade-right", "data-aos-once": "true" },
           (0, _hyperapp.h)(
             "div",
             { className: "eventTitle" },
@@ -660,7 +660,7 @@ var PromotionsAndEvents = exports.PromotionsAndEvents = function PromotionsAndEv
             )
           )
         ),
-        (0, _hyperapp.h)("div", { className: "box image2", "data-aos": "fade-right" })
+        (0, _hyperapp.h)("div", { className: "box image2", "data-aos": "fade-right", "data-aos-once": "true" })
       )
     )
   );
@@ -688,7 +688,7 @@ var Quote = exports.Quote = function Quote(_ref) {
     return state.bannerQuote.map(function (quote) {
       return (0, _hyperapp.h)(
         "div",
-        { className: "quoteContainer", "data-aos": "fade" },
+        { className: "quoteContainer", "data-aos": "fade", "data-aos-once": "true" },
         (0, _hyperapp.h)(
           "h1",
           { className: "quoteContent" },
@@ -832,7 +832,7 @@ var Reviews = exports.Reviews = function Reviews(_ref) {
         { className: "row" },
         (0, _hyperapp.h)(
           "div",
-          { className: "col-md-6 second", "data-aos": "fade-right" },
+          { className: "col-md-6 second", "data-aos": "fade-right", "data-aos-once": "true" },
           (0, _hyperapp.h)("img", { src: "/images/chef.png" })
         ),
         (0, _hyperapp.h)(
@@ -850,7 +850,7 @@ var Reviews = exports.Reviews = function Reviews(_ref) {
           ),
           (0, _hyperapp.h)(
             "div",
-            { className: "reviewContainer", "data-aos": "fade-up" },
+            { className: "reviewContainer", "data-aos": "fade-up", "data-aos-once": "true" },
             reviews()
           ),
           (0, _hyperapp.h)(
@@ -934,7 +934,7 @@ var SpecialMenu = exports.SpecialMenu = function SpecialMenu(_ref) {
       { className: "container" },
       (0, _hyperapp.h)(
         "div",
-        { className: "hContainer", "data-aos": "fade" },
+        { className: "hContainer", "data-aos": "fade", "data-aos-once": "true" },
         (0, _hyperapp.h)(
           "h6",
           null,
@@ -948,12 +948,12 @@ var SpecialMenu = exports.SpecialMenu = function SpecialMenu(_ref) {
       ),
       (0, _hyperapp.h)(
         "div",
-        { className: "specialContainer", "data-aos": "fade-up" },
+        { className: "specialContainer", "data-aos": "fade-up", "data-aos-once": "true" },
         menuItems()
       ),
       (0, _hyperapp.h)(
         "div",
-        { className: "menuLink", "data-aos": "fade" },
+        { className: "menuLink", "data-aos": "fade", "data-aos-once": "true" },
         (0, _hyperapp.h)(
           "a",
           { href: "#" },
@@ -990,7 +990,7 @@ var TopImg = exports.TopImg = function TopImg(_ref) {
       { className: "container" },
       (0, _hyperapp.h)(
         "div",
-        { className: "title", "data-aos": "fade-right" },
+        { className: "title", "data-aos": "fade-right", "data-aos-once": "true" },
         (0, _hyperapp.h)(
           "h5",
           null,
@@ -1004,7 +1004,7 @@ var TopImg = exports.TopImg = function TopImg(_ref) {
       ),
       (0, _hyperapp.h)(
         "div",
-        { className: "contact-info", id: "contact-info", "data-aos-anchor": "#contact-info", "data-aos-anchor-placement": "top-bottom", "data-aos": "fade-up" },
+        { className: "contact-info", id: "contact-info", "data-aos-anchor": "#contact-info", "data-aos-anchor-placement": "top-bottom", "data-aos": "fade-up", "data-aos-once": "true" },
         (0, _hyperapp.h)(
           "div",
           null,

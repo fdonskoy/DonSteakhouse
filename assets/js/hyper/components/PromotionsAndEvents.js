@@ -4,13 +4,13 @@ export const PromotionsAndEvents = ({state, actions}) => {
   return (
     <section id="PromotionsAndEvents">
       <div className="container">
-        <h6 data-aos="fade">our news</h6>
-        <h3 data-aos="fade">promotions & events</h3>
+        <h6 data-aos="fade" data-aos-once="true">our news</h6>
+        <h3 data-aos="fade" data-aos-once="true">promotions & events</h3>
         <div className="specialContainer">
-          <div className="box image1" data-aos="fade-right">
+          <div className="box image1" data-aos="fade-right" data-aos-once="true">
 
           </div>
-          <div className="box event" data-aos="fade-right">
+          <div className="box event" data-aos="fade-right" data-aos-once="true">
             <div className="eventTitle">
               Beef Sauteed onions - Let&#39;s enjoy!
             </div>
@@ -29,7 +29,7 @@ export const PromotionsAndEvents = ({state, actions}) => {
               </div>
             </div>
           </div>
-          <div className="box event" data-aos="fade-right">
+          <div className="box event" data-aos="fade-right" data-aos-once="true">
             <div className="eventTitle">
               Art photography in foody
             </div>
@@ -48,7 +48,7 @@ export const PromotionsAndEvents = ({state, actions}) => {
               </div>
             </div>
           </div>
-          <div className="box image2" data-aos="fade-right">
+          <div className="box image2" data-aos="fade-right" data-aos-once="true">
 
           </div>
 
