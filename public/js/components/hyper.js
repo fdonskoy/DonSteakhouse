@@ -435,7 +435,7 @@ var Header = exports.Header = function Header(_ref) {
 		null,
 		(0, _hyperapp.h)(
 			"div",
-			{ className: "container", "data-aos": "fade" },
+			{ className: "container" },
 			(0, _hyperapp.h)("div", { className: "logo" }),
 			(0, _hyperapp.h)(
 				"div",

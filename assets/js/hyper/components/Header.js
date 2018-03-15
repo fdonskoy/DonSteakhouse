@@ -10,7 +10,7 @@ import {h, app} from 'hyperapp'
 export const Header = ({ state, actions }) => {
 	return (
 		<header>
-			<div className="container" data-aos="fade">
+			<div className="container">
 				<div className="logo" />
 				<div className="hamburger" onclick={actions.showMenu}>
 					<div />
