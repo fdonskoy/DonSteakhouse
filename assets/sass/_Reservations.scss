@@ -1,58 +1,96 @@
 #Reservations {
-  .overlay {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    transition: opacity 500ms;
-    visibility: hidden;
-    opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity */
+  opacity: 0;
+  z-index: -1;
+  transition: ease-out 0.2s;
+  text-align: center;
+  padding: 0 10%;
+  .container {
+    opacity: 1;
+    top: 5%;
+    background: #FFFFFF;
+    height: 460px;
+    padding: 5% 2%;
+    position:relative;
+    .close {
+      position: absolute;
+      right:0;
+      top:0;
+      padding: 10px;
+      color: #FFFFFF;
+      background: orange;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .reserveHeader {
+      text-transform: uppercase;
+      color: #343434;
+      font-size: 36px;
+      padding: 2% 0;
+    }
+    .reserveSubHeader {
+      color: #343434;
+      font-weight: 500;
+      font-size: 16px;
+      padding: 2% 0 4% 0;
+    }
 
-    .popup {
-      margin: 70px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 5px;
-      width: 30%;
-      position: relative;
-      transition: all 5s ease-in-out;
-
-      h2 {
-        margin-top: 0;
-        color: #333;
-        font-family: Tahoma, Arial, sans-serif;
-      }
-      .close {
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        transition: all 200ms;
-        font-size: 30px;
-        font-weight: bold;
-        text-decoration: none;
-        color: #333;
-        &:hover {
-          color: #06D85F;
+    #ContactForm {
+      .row {
+        margin-left: 0;
+        margin-right: 0;
+        .col-md-6 {
+          .form-group {
+            padding-bottom: 5%;
+            input {
+              width:100%;
+              height: 35px;
+              padding: 0 2%;
+              outline-color: orange;
+              outline-width: thin;
+            }
+          }
+        }
+        button {
+          background: orange;
+          padding: 10px 20px 8px;
+          cursor:pointer;
+          color: #fff;
+          font-weight: 700;
         }
       }
-      .content {
-        max-height: 30%;
-        overflow: auto;
+      .col-md-12 {
+        .form-group {
+          padding-bottom: 2%;
+          textarea {
+            width: 100%;
+            padding: 0 2%;
+            border: none;
+            overflow: auto;
+            outline: none;
+
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+
+            resize: none;
+            border-width: thin;
+            outline-color: orange;
+            outline-width: thin;
+          }
+        }
       }
-    }
-
-    &:target {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    &.diss {
-      visibility: hidden;
     }
   }
 
-
-
+  &.inactive {
+    opacity: 1;
+    z-index: 10;
+  }
 }

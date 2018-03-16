@@ -43,6 +43,7 @@ function closeMenu(state, actions) {
 }
 
 function close(state, actions) {
+  console.log('ayy');
   return { times: !state.times };
 }
 
@@ -113,7 +114,8 @@ function App(_ref) {
     (0, _hyperapp.h)(_Reviews.Reviews, { state: state, actions: actions }),
     (0, _hyperapp.h)(_PromotionsAndEvents.PromotionsAndEvents, { state: state, actions: actions }),
     (0, _hyperapp.h)(_Contact.Contact, { state: state, actions: actions }),
-    (0, _hyperapp.h)(_Footer.Footer, { state: state, actions: actions })
+    (0, _hyperapp.h)(_Footer.Footer, { state: state, actions: actions }),
+    (0, _hyperapp.h)(_Reservations.Reservations, { state: state, actions: actions })
   );
 }
 // <Header state={state} actions={actions}/>
@@ -453,7 +455,7 @@ var Header = exports.Header = function Header(_ref) {
 				),
 				(0, _hyperapp.h)(
 					"a",
-					{ href: "#" },
+					{ href: "#", onclick: actions.close },
 					"Reservations"
 				),
 				(0, _hyperapp.h)(
@@ -739,28 +741,124 @@ var Reservations = exports.Reservations = function Reservations(_ref) {
       actions = _ref.actions;
 
   return (0, _hyperapp.h)(
-    "div",
-    { id: "Reservations" },
+    'div',
+    { id: 'Reservations', className: '' + (state.times ? 'inactive' : '') },
     (0, _hyperapp.h)(
-      "div",
-      { id: "popup1", className: "overlay " + (state.times ? 'diss' : '') },
+      'div',
+      { className: 'container' },
       (0, _hyperapp.h)(
-        "div",
-        { className: "popup" },
+        'p',
+        { className: 'close', onclick: actions.close },
+        '\xD7'
+      ),
+      (0, _hyperapp.h)(
+        'div',
+        { className: 'reserveHeader' },
+        'Reserve'
+      ),
+      (0, _hyperapp.h)(
+        'div',
+        { className: 'reserveSubHeader' },
+        'Fill out the form, secure your spot'
+      ),
+      (0, _hyperapp.h)(
+        'form',
+        { id: 'ContactForm' },
         (0, _hyperapp.h)(
-          "h2",
-          null,
-          "Here i am"
+          'div',
+          { className: 'row' },
+          (0, _hyperapp.h)(
+            'div',
+            { className: 'col-md-6' },
+            (0, _hyperapp.h)(
+              'div',
+              { className: 'form-group' },
+              (0, _hyperapp.h)('input', { className: 'form-control', 'data-validation-required-message': 'Please enter your name.', id: 'name', placeholder: 'Name *', required: '', type: 'text', 'aria-invalid': 'false' }),
+              (0, _hyperapp.h)(
+                'p',
+                { className: 'help-block text-danger' },
+                ' '
+              )
+            )
+          ),
+          (0, _hyperapp.h)(
+            'div',
+            { className: 'col-md-6' },
+            (0, _hyperapp.h)(
+              'div',
+              { className: 'form-group' },
+              (0, _hyperapp.h)('input', { className: 'form-control', 'data-validation-required-message': 'Please enter your phone.', id: 'name', placeholder: 'Your Phone *', required: '', type: 'text' }),
+              (0, _hyperapp.h)(
+                'p',
+                { className: 'help-block text-danger' },
+                ' '
+              )
+            )
+          )
         ),
         (0, _hyperapp.h)(
-          "a",
-          { className: "close", href: "#", onclick: actions.close },
-          "\xD7"
+          'div',
+          { className: 'row' },
+          (0, _hyperapp.h)(
+            'div',
+            { className: 'col-md-6' },
+            (0, _hyperapp.h)(
+              'div',
+              { className: 'form-group' },
+              (0, _hyperapp.h)('input', { className: 'form-control', 'data-validation-required-message': 'Please enter your email.', id: 'name', placeholder: 'Email *', required: '', type: 'text', 'aria-invalid': 'false' }),
+              (0, _hyperapp.h)(
+                'p',
+                { className: 'help-block text-danger' },
+                ' '
+              )
+            )
+          ),
+          (0, _hyperapp.h)(
+            'div',
+            { className: 'col-md-6' },
+            (0, _hyperapp.h)(
+              'div',
+              { className: 'form-group' },
+              (0, _hyperapp.h)('input', { className: 'form-control', 'data-validation-required-message': 'Please enter your date.', id: 'name', placeholder: 'Date *', required: '', type: 'text' }),
+              (0, _hyperapp.h)(
+                'p',
+                { className: 'help-block text-danger' },
+                ' '
+              )
+            )
+          )
         ),
         (0, _hyperapp.h)(
-          "div",
-          { className: "content" },
-          "Thank to pop me out of that button, but now im done so you can close this window."
+          'div',
+          { className: 'col-md-12' },
+          (0, _hyperapp.h)(
+            'div',
+            { className: 'form-group' },
+            (0, _hyperapp.h)('textarea', { className: 'form-control', 'data-validation-required-message': 'Please enter a message.', id: 'message', name: 'message', placeholder: 'Do You Have Any Special Requirements? *', required: '' }),
+            (0, _hyperapp.h)(
+              'p',
+              { className: 'help-block text-danger' },
+              ' '
+            )
+          )
+        ),
+        (0, _hyperapp.h)(
+          'div',
+          { className: 'row' },
+          (0, _hyperapp.h)(
+            'div',
+            { className: 'col-lg-12 text-center' },
+            (0, _hyperapp.h)(
+              'div',
+              { id: 'success' },
+              ' '
+            ),
+            (0, _hyperapp.h)(
+              'button',
+              { className: 'btn btn-contact', type: 'button', onclick: actions.close },
+              'Book'
+            )
+          )
         )
       )
     )
@@ -1072,29 +1170,31 @@ var _App2 = _interopRequireDefault(_App);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _hyperapp.app)({
-  state: _globalState.globalState,
-  view: function view(state, actions) {
-    return (0, _hyperapp.h)(_App2.default, { state: state, actions: actions });
-  },
-  root: document.getElementById('app'),
-  actions: _actions.actions,
-  events: {
-    action: function action(state, actions, _ref) {
-      var name = _ref.name,
-          data = _ref.data;
-
-      console.group("Action Info");
-      console.log("Name:", name);
-      console.log("Data:", data);
-      console.groupEnd();
+window.onload = function () {
+  (0, _hyperapp.app)({
+    state: _globalState.globalState,
+    view: function view(state, actions) {
+      return (0, _hyperapp.h)(_App2.default, { state: state, actions: actions });
     },
-    load: function load(state, actions) {
-      actions.intro();
-    }
-  },
-  mixins: [(0, _hyperappReduxDevtools2.default)()]
-});
+    root: document.getElementById('app'),
+    actions: _actions.actions,
+    events: {
+      action: function action(state, actions, _ref) {
+        var name = _ref.name,
+            data = _ref.data;
+
+        console.group("Action Info");
+        console.log("Name:", name);
+        console.log("Data:", data);
+        console.groupEnd();
+      },
+      load: function load(state, actions) {
+        actions.intro();
+      }
+    },
+    mixins: [(0, _hyperappReduxDevtools2.default)()]
+  });
+};
 
 /***/ })
 ],[23]);

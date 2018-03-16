@@ -32,6 +32,7 @@ function closeMenu(state, actions){
 }
 
 function close(state, actions){
+  console.log('ayy');
   return (
     {times: !state.times}
   )

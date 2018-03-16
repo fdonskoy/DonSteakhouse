@@ -19,7 +19,7 @@ export const Header = ({ state, actions }) => {
 				</div>
 				<nav className={state.menu}>
 					<a href="#SpecialMenu">Menu</a>
-					<a href="#">Reservations</a>
+					<a href="#" onclick={actions.close}>Reservations</a>
 					<a href="#Reviews">Reviews</a>
 					<a href="#Contact">Contact</a>
 					<div className="close" onclick={actions.closeMenu}>
